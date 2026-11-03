@@ -1,16 +1,18 @@
 import type { Metadata } from "next"
 import PageContent from "@/site-pages/contact"
+
 export const metadata: Metadata = {
-  title: "Contact an Accountant | Book a Free Consultation",
+  title: "Contact Booksy Global | Bookkeeping & Accounting Support",
   description:
-    "Contact FinCore Accounting to schedule a free consultation about bookkeeping, tax preparation, payroll, or business advisory services.",
+    "Discuss bookkeeping, payroll, BAS, IAS, GST, reporting, compliance, and accounting outsourcing support with Booksy Global.",
   keywords: [
-    "contact accountant",
-    "free accounting consultation",
-    "bookkeeping consultation",
-    "tax accountant contact",
+    "contact Booksy Global",
+    "bookkeeping support enquiry",
+    "accounting outsourcing consultation",
+    "Australian payroll and BAS support",
   ],
 }
+
 export default function Page() {
   return <PageContent />
 }

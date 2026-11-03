@@ -1,97 +1,94 @@
-"use client"
-
-import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Check } from "lucide-react"
+import Link from "next/link"
+import { ArrowDown, Check } from "lucide-react"
 
-import { PageHero } from "@/components/page-hero"
 import { SectionHeading } from "@/components/section-heading"
 import { CtaBanner } from "@/components/sections/cta-banner"
-import { Stats } from "@/components/sections/stats"
-import { buttonVariants } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { industries } from "@/data/site"
-import { cn } from "@/lib/utils"
 
 export default function IndustriesPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Industries"
-        title="Industry Expertise That Makes a Difference"
-        description="Every industry has its own rules, risks and opportunities. Our specialists know yours, so nothing gets missed."
-        crumbs={[{ label: "Home", to: "/" }, { label: "Industries" }]}
-      />
-
-      <section className="mx-auto max-w-[1280px] px-4 py-20 sm:px-6 lg:px-10">
-        <SectionHeading
-          eyebrow="Who We Serve"
-          title="Specialized Accounting for Your Industry"
-          divider
+      <section className="relative isolate flex min-h-[520px] items-center overflow-hidden bg-[#0b122a] text-white sm:min-h-[580px] lg:min-h-[calc(100svh-5rem)]">
+        <Image
+          src="/industries-hero.avif"
+          alt=""
+          fill
+          priority
+          unoptimized
+          sizes="100vw"
+          className="object-cover object-center"
         />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {industries.map(({ icon: Icon, title, text, points }) => (
-            <Card
-              key={title}
-              className="group gap-0 rounded-xl bg-white p-7 shadow-[0_6px_24px_-10px_rgba(15,29,51,0.12)] ring-slate-100 transition-all hover:-translate-y-1 hover:bg-navy hover:shadow-[0_18px_40px_-14px_rgba(15,29,51,0.35)]"
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-[#0b122a]/95 via-[#0b122a]/80 to-[#0b122a]/30"
+          aria-hidden="true"
+        />
+        <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 py-24 sm:px-10 md:py-28 lg:px-12">
+          <div className="max-w-[850px]">
+            <p className="text-xs font-bold tracking-[0.16em] text-blue-200 uppercase">
+              Sectors & practices
+            </p>
+            <h1 className="mt-5 text-balance font-serif text-[2.65rem] leading-[1.08] tracking-tight text-white sm:text-[3.5rem] lg:text-[4.15rem]">
+              Accounting Support Built for Australian Businesses
+            </h1>
+            <p className="mt-7 max-w-[720px] text-base leading-[1.75] text-slate-200 sm:text-lg">
+              Tailored workflow execution suited to the regulatory nuances and statutory schedules
+              across diverse industry landscapes.
+            </p>
+            <Link
+              href="#industry-cards"
+              className="mt-9 inline-flex h-12 items-center gap-2 rounded-md bg-white px-5 text-sm font-semibold text-[#0b122a] transition hover:bg-brand-soft"
             >
-              <span className="flex size-14 items-center justify-center rounded-full bg-brand-soft text-navy transition-colors group-hover:bg-white/10 group-hover:text-white">
-                <Icon className="size-7" strokeWidth={1.5} />
-              </span>
-              <h3 className="mt-5 text-[16px] font-semibold text-ink transition-colors group-hover:text-white">
-                {title}
-              </h3>
-              <p className="mt-2.5 text-[13px] leading-[1.75] text-slate-600 transition-colors group-hover:text-white/80">
-                {text}
-              </p>
-              <ul className="mt-5 space-y-2">
-                {points.map((p) => (
-                  <li
-                    key={p}
-                    className="flex items-center gap-2 text-[12.5px] font-medium text-ink transition-colors group-hover:text-white"
-                  >
-                    <Check className="size-4 text-brand group-hover:text-white" strokeWidth={2.5} />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          ))}
+              Explore industries <ArrowDown className="size-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
-      <Stats />
-
-      <section className="mx-auto grid max-w-[1280px] items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-10">
-        <div>
+      <section
+        id="industry-cards"
+        className="scroll-mt-20 bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10"
+      >
+        <div className="mx-auto max-w-[1360px]">
           <SectionHeading
-            eyebrow="Don't See Yours?"
-            title="We Adapt to Every Business"
-            align="left"
+            eyebrow="Industries we serve"
+            title="Support shaped around your industry"
             divider
           />
-          <p className="mt-6 text-[14.5px] leading-[1.8] text-slate-600">
-            From nonprofits and law firms to construction companies and creative agencies,
-            we&apos;ve worked with businesses in more than 50 industries. If you have unique
-            reporting needs, we&apos;ll build a process around them.
-          </p>
-          <Link
-            href="/contact"
-            className={cn(
-              buttonVariants(),
-              "mt-8 h-12 gap-2.5 rounded-md bg-navy px-6 text-[14px] font-semibold",
-            )}
-          >
-            Talk to a Specialist <ArrowRight className="size-4" />
-          </Link>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-8 lg:gap-8">
+            {industries.map(({ icon: Icon, title, text, points }, index) => (
+              <Card
+                key={title}
+                className={`group gap-0 rounded-xl bg-white p-7 shadow-[0_6px_24px_-10px_rgba(15,29,51,0.12)] ring-slate-100 transition-all hover:-translate-y-1 hover:bg-navy hover:shadow-[0_18px_40px_-14px_rgba(15,29,51,0.35)] lg:col-span-2 lg:min-h-[500px] lg:p-8 ${index === 4 ? "lg:col-start-2" : ""}`}
+              >
+                <span className="flex size-14 items-center justify-center rounded-full bg-brand-soft text-navy transition-colors group-hover:bg-white/10 group-hover:text-white">
+                  <Icon className="size-7" strokeWidth={1.5} />
+                </span>
+                <h3 className="mt-5 text-[16px] font-semibold text-ink transition-colors group-hover:text-white">
+                  {title}
+                </h3>
+                <p className="mt-2.5 text-[13px] leading-[1.75] text-slate-600 transition-colors group-hover:text-white/80">
+                  {text}
+                </p>
+                <ul className="mt-5 space-y-2">
+                  {points.map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-start gap-2 text-[12.5px] leading-[1.5] font-medium text-ink transition-colors group-hover:text-white"
+                    >
+                      <Check
+                        className="mt-0.5 size-4 shrink-0 text-brand group-hover:text-white"
+                        strokeWidth={2.5}
+                      />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            ))}
+          </div>
         </div>
-        <Image
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1100&q=80"
-          alt="City office buildings"
-          width={1100}
-          height={756}
-          className="aspect-[16/11] w-full rounded-xl object-cover"
-        />
       </section>
 
       <CtaBanner />

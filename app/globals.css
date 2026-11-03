@@ -187,22 +187,24 @@
 }
 
 .practice-index-track {
-  scrollbar-color: var(--brand) #e2e8f0;
-  scrollbar-width: thin;
+  scrollbar-color: #1a63d6 #eaf2fd !important;
+  scrollbar-width: thin !important;
 }
 
 .practice-index-track::-webkit-scrollbar {
-  height: 8px;
+  height: 8px !important;
+  background: #eaf2fd !important;
 }
 
 .practice-index-track::-webkit-scrollbar-track {
-  border-radius: 9999px;
-  background: #e2e8f0;
+  border-radius: 9999px !important;
+  background: #eaf2fd !important;
 }
 
 .practice-index-track::-webkit-scrollbar-thumb {
-  border-radius: 9999px;
-  background: var(--brand);
+  border: 1px solid #eaf2fd !important;
+  border-radius: 9999px !important;
+  background-color: #1a63d6 !important;
 }
 
 .services-card-track {
@@ -229,4 +231,37 @@
   width: 0 !important;
   height: 0 !important;
   background: transparent !important;
+}
+
+@keyframes platform-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.platform-marquee-track {
+  animation: platform-marquee-scroll 34s linear infinite;
+  will-change: transform;
+}
+
+.platform-marquee:hover .platform-marquee-track,
+.platform-marquee:focus-within .platform-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .platform-marquee-track {
+    animation: none;
+  }
+
+  .platform-marquee {
+    overflow-x: auto;
+  }
+
+  .platform-marquee-track > [aria-hidden="true"] {
+    display: none;
+  }
 }

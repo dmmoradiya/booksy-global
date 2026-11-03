@@ -1,10 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import { CalendarDays, Phone } from "lucide-react"
+import { CalendarDays } from "lucide-react"
 
 import { buttonVariants } from "@/components/ui/button"
-import { contact } from "@/data/site"
 import { cn } from "@/lib/utils"
 
 export function CtaBanner() {
@@ -34,16 +33,15 @@ export function CtaBanner() {
           >
             Book a Free Consultation
           </Link>
-          <a
-            href={contact.phoneHref}
+          <Link
+            href="/contact"
             className={cn(
               buttonVariants({ variant: "outline" }),
-              "h-12 gap-2.5 rounded-md border-white/80 bg-transparent px-6 text-[13.5px] font-semibold text-white hover:bg-white/10 hover:text-white",
+              "h-12 rounded-md border-white/80 bg-transparent px-6 text-[13.5px] font-semibold text-white hover:bg-white/10 hover:text-white",
             )}
           >
-            <Phone className="size-4" />
-            Call Us: {contact.phone}
-          </a>
+            Contact Us
+          </Link>
         </div>
       </div>
     </section>

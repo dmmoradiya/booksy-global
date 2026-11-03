@@ -127,14 +127,20 @@ export function Services() {
         </div>
       </div>
 
-      <div
-        ref={trackRef}
-        className="services-card-track mx-auto mt-10 flex max-w-[1280px] snap-x snap-mandatory gap-5 overflow-x-auto px-8 pb-5 sm:mt-10 sm:gap-6 sm:px-10"
-        aria-label="Bookkeeping and compliance services"
-      >
-        {services.map((service) => (
-          <FlippingServiceCard key={service.slug} service={service} />
-        ))}
+      <div className="relative mx-auto mt-10 max-w-[1280px] sm:mt-10">
+        <div
+          ref={trackRef}
+          className="services-card-track flex snap-x snap-mandatory gap-5 overflow-x-auto px-8 pb-5 sm:gap-6 sm:px-10"
+          aria-label="Bookkeeping and compliance services"
+        >
+          {services.map((service) => (
+            <FlippingServiceCard key={service.slug} service={service} />
+          ))}
+        </div>
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-5 bg-[#f6f8fa]"
+          aria-hidden="true"
+        />
       </div>
 
       <div className="mx-auto mt-5 max-w-[1280px] px-4 text-center sm:px-6 lg:px-10">

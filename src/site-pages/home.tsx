@@ -2,10 +2,12 @@
 
 import { BenefitsBar } from "@/components/sections/benefits-bar"
 import { CtaBanner } from "@/components/sections/cta-banner"
+import { DataSecurity } from "@/components/sections/data-security"
 import { Hero } from "@/components/sections/hero"
+import { HowWeWork } from "@/components/sections/how-we-work"
+import { IndustriesTeaser } from "@/components/sections/industries-teaser"
+import { Platforms } from "@/components/sections/platforms"
 import { Services } from "@/components/sections/services"
-import { Stats } from "@/components/sections/stats"
-import { Testimonials } from "@/components/sections/testimonials"
 import { WhyChooseUs } from "@/components/sections/why-choose-us"
 
 export default function HomePage() {
@@ -15,8 +17,10 @@ export default function HomePage() {
       <BenefitsBar overlapHero />
       <Services />
       <WhyChooseUs />
-      <Stats />
-      <Testimonials />
+      <IndustriesTeaser />
+      <Platforms />
+      <HowWeWork />
+      <DataSecurity />
       <CtaBanner />
     </div>
   )

@@ -1,198 +1,267 @@
 "use client"
 
 import Image from "next/image"
-import { Eye, Gem, HeartHandshake, Lightbulb, ShieldCheck, Target } from "lucide-react"
+import { Check } from "lucide-react"
 
-import { PageHero } from "@/components/page-hero"
-import { SectionHeading } from "@/components/section-heading"
-import { CtaBanner } from "@/components/sections/cta-banner"
-import { Stats } from "@/components/sections/stats"
-import { Testimonials } from "@/components/sections/testimonials"
-import { Card } from "@/components/ui/card"
-import { team } from "@/data/site"
-
-const values = [
-  {
-    icon: ShieldCheck,
-    title: "Integrity",
-    text: "Honest advice and transparent pricing, even when it's not what you want to hear.",
-  },
-  {
-    icon: Target,
-    title: "Accuracy",
-    text: "Every number is checked twice. Our multi-step review process catches what others miss.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Partnership",
-    text: "We learn your business and treat your goals as if they were our own.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation",
-    text: "Modern cloud tools and automation give you real-time insight, not year-old reports.",
-  },
+const services = [
+  "Daily bookkeeping and transaction categorisation",
+  "Bank, credit card, and loan reconciliations",
+  "Accounts payable and accounts receivable support",
+  "Payroll processing and payroll reconciliation support",
+  "Financial reporting and management dashboards",
+  "Cash-flow forecasting support",
+  "Tax workpapers and compliance preparation",
+  "Year-end accounts preparation support",
+  "E-commerce reconciliation for online sales platforms",
+  "Catch-up and cleanup bookkeeping",
+  "Dedicated accounting support for businesses and practices",
 ]
 
-const milestones = [
+const commitments = [
+  "Reliable and organised accounting support",
+  "Flexible capacity based on your workload",
+  "Clear communication and timely delivery",
+  "Secure and confidential workflows",
+  "Support within client-approved software systems",
+  "Experienced Chartered Accountant supervision",
+  "Country-specific support for the United States, Australia, and the United Kingdom",
+]
+
+const leaders = [
   {
-    year: "2015",
-    title: "FinCore is founded",
-    text: "Robert Hayes opens a two-person practice in Manhattan.",
+    initials: "MB",
+    name: "CA Milan Baldaniya",
+    role: "Australian Division — Lead Partner",
+    experience:
+      "Chartered Accountant with 3+ years of experience, supporting Australian bookkeeping, payroll, compliance, and financial reporting workflows.",
   },
   {
-    year: "2018",
-    title: "Going fully cloud",
-    text: "We move every client to cloud accounting and a secure portal.",
+    initials: "HD",
+    name: "CA Harsh Dhameliya",
+    role: "US Division — Lead Partner",
+    experience:
+      "Chartered Accountant with 3+ years of experience, supporting bookkeeping, reporting, e-commerce accounting, and tax workpaper requirements for US businesses and practices.",
   },
   {
-    year: "2021",
-    title: "Advisory practice launches",
-    text: "Fractional CFO services help clients plan growth with confidence.",
+    initials: "AA",
+    name: "CA Ayush Atara",
+    role: "US Division — Lead Partner",
+    experience:
+      "Chartered Accountant with 4+ years of experience, supporting US accounting workflows, financial reporting, and dedicated accounting team delivery.",
   },
   {
-    year: "2025",
-    title: "500+ businesses served",
-    text: "A team of 30 professionals now serves clients in all 50 states.",
+    initials: "BS",
+    name: "CA Bansari Suhagiya",
+    role: "UK Division — Head of UK Department",
+    experience:
+      "Chartered Accountant with 4+ years of experience, supporting UK bookkeeping, VAT, year-end accounts, payroll, and accounting practice outsourcing workflows.",
   },
 ]
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="About Us"
-        title="Your Trusted Partner in Financial Success"
-        description="For over a decade, FinCore Accounting has helped small and mid-sized businesses keep accurate books, pay less tax and grow with confidence."
-        crumbs={[{ label: "Home", to: "/" }, { label: "About Us" }]}
-      />
+      <section className="relative isolate overflow-hidden bg-navy text-white">
+        <Image
+          src="/about-hero.avif"
+          alt="Professional team collaborating in a modern office"
+          fill
+          priority
+          unoptimized
+          sizes="100vw"
+          className="absolute inset-0 -z-10 object-cover"
+        />
+        <div
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0b192c]/85 via-[#0b192c]/65 to-[#0b192c]/35"
+          aria-hidden="true"
+        />
+        <div className="relative mx-auto flex min-h-[320px] max-w-[1280px] flex-col justify-center px-4 py-16 sm:min-h-[380px] sm:px-6 lg:px-10">
+          <p className="text-xs font-bold tracking-[0.14em] text-blue-100 uppercase">About Us</p>
+          <h1 className="mt-3 text-4xl leading-tight font-semibold tracking-tight text-white sm:text-5xl">
+            About Booksy Global
+          </h1>
+        </div>
+      </section>
 
-      {/* Story */}
-      <section className="mx-auto grid max-w-[1280px] items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-10">
-        <div className="relative">
-          <Image
-            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1100&q=80"
-            alt="FinCore team collaborating"
-            width={1100}
-            height={825}
-            className="aspect-[4/3] w-full rounded-xl object-cover"
-          />
-          <div className="absolute -right-3 -bottom-6 hidden rounded-xl bg-navy px-6 py-5 text-white shadow-xl sm:block">
-            <p className="text-[32px] leading-none font-bold">30+</p>
-            <p className="mt-2 text-[12px] text-white/85">Certified Professionals</p>
+      <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
+        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
+          <div>
+            <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">
+              About Booksy Global
+            </p>
+            <h2 className="mt-3 text-balance text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
+              Smart Accounting Support for Businesses and Practices That Want to Scale
+            </h2>
+          </div>
+          <div className="space-y-5 text-[15px] leading-7 text-slate-600 sm:text-base">
+            <p>
+              Booksy Global provides reliable bookkeeping, accounting, payroll, tax preparation,
+              compliance, and financial reporting support to businesses and accounting practices
+              across the United States, Australia, and the United Kingdom.
+            </p>
+            <p>
+              We act as an extension of your finance team—helping you manage day-to-day accounting
+              workloads, maintain organised records, prepare clear financial reports, and build
+              capacity without the cost and complexity of expanding an in-house team.
+            </p>
+            <p>
+              Our approach combines experienced accounting professionals, structured workflows,
+              secure cloud collaboration, and Chartered Accountant-led review processes. Whether you
+              need ongoing bookkeeping, support during busy periods, e-commerce reconciliation,
+              payroll assistance, tax workpapers, or dedicated accounting staff, we tailor our
+              support around your business requirements.
+            </p>
           </div>
         </div>
-        <div>
-          <SectionHeading
-            eyebrow="Our Story"
-            title="Built on Trust, Driven by Results"
-            align="left"
-            divider
-          />
-          <p className="mt-6 text-[14.5px] leading-[1.8] text-slate-600">
-            FinCore began with a simple idea: business owners deserve an accountant who picks up the
-            phone, explains things in plain English and looks out for them all year, not just at tax
-            time.
-          </p>
-          <p className="mt-4 text-[14.5px] leading-[1.8] text-slate-600">
-            Today our team of CPAs, enrolled agents and advisors serves more than 500 businesses
-            across 50 industries. We combine deep technical expertise with modern technology so you
-            always know where you stand and what to do next.
-          </p>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            <div className="rounded-xl bg-brand-soft p-5">
-              <Gem className="size-6 text-navy" strokeWidth={1.6} />
-              <h3 className="mt-3 text-[15px] font-semibold text-ink">Our Mission</h3>
-              <p className="mt-2 text-[13px] leading-relaxed text-slate-600">
-                To give every business the financial clarity and confidence it needs to thrive.
+      </section>
+
+      <section className="bg-[#f6f8fa]">
+        <div className="mx-auto grid max-w-[1280px] items-stretch gap-0 px-4 sm:px-6 lg:grid-cols-2 lg:px-10">
+          <div className="relative h-72 overflow-hidden rounded-2xl sm:h-96 lg:my-16 lg:h-auto">
+            <Image
+              src="/about-workspace.avif"
+              alt="Bright office workspace with desks and natural light"
+              fill
+              unoptimized
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="flex flex-col justify-center py-12 sm:py-16 lg:py-20 lg:pl-16">
+            <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">Our Purpose</p>
+            <h2 className="mt-3 text-balance text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
+              To Make Accounting Support More Accessible, Flexible, and Reliable
+            </h2>
+            <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-600 sm:text-base">
+              <p>
+                Managing bookkeeping, payroll, reporting, and compliance work can take valuable time
+                away from running and growing a business. Booksy Global helps reduce that pressure
+                by providing dependable offshore accounting support that works within your existing
+                processes and software.
               </p>
-            </div>
-            <div className="rounded-xl bg-brand-soft p-5">
-              <Eye className="size-6 text-navy" strokeWidth={1.6} />
-              <h3 className="mt-3 text-[15px] font-semibold text-ink">Our Vision</h3>
-              <p className="mt-2 text-[13px] leading-relaxed text-slate-600">
-                To be the most trusted accounting partner for growing businesses in America.
+              <p>
+                Our goal is simple: to help businesses and accounting practices gain clearer
+                financial visibility, stronger operational capacity, and more time to focus on
+                high-value work.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <Stats />
-
-      {/* Values */}
-      <section className="mx-auto max-w-[1280px] px-4 py-20 sm:px-6 lg:px-10">
-        <SectionHeading eyebrow="Our Values" title="What Guides Everything We Do" divider />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {values.map(({ icon: Icon, title, text }) => (
-            <Card
-              key={title}
-              className="items-center gap-0 rounded-xl bg-white p-8 text-center shadow-[0_6px_24px_-10px_rgba(15,29,51,0.12)] ring-slate-100"
-            >
-              <span className="flex size-[60px] items-center justify-center rounded-full bg-brand-soft text-navy">
-                <Icon className="size-7" strokeWidth={1.5} />
-              </span>
-              <h3 className="mt-5 text-[16px] font-semibold text-ink">{title}</h3>
-              <p className="mt-3 text-[13px] leading-[1.75] text-slate-600">{text}</p>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="bg-[#f6f9fe] py-20">
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
-          <SectionHeading eyebrow="Our Journey" title="A Decade of Growing Together" divider />
-          <ol className="relative mt-14 grid gap-10 lg:grid-cols-4 lg:gap-6">
-            <span className="absolute top-[22px] right-[12%] left-[12%] hidden h-0.5 bg-brand/20 lg:block" />
-            {milestones.map((m) => (
+      <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
+        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
+          <div>
+            <h2 className="text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
+              What We Do
+            </h2>
+            <p className="mt-5 text-[15px] leading-7 text-slate-600 sm:text-base">
+              Our team supports a range of accounting and finance activities, including:
+            </p>
+          </div>
+          <ul>
+            {services.map((service) => (
               <li
-                key={m.year}
-                className="relative flex gap-5 lg:flex-col lg:items-center lg:text-center"
+                key={service}
+                className="flex items-start gap-3 border-b border-slate-200 py-3 text-sm leading-6 text-slate-700 sm:text-[15px]"
               >
-                <span className="relative z-10 flex size-11 shrink-0 items-center justify-center rounded-full bg-navy text-[12px] font-bold text-white ring-8 ring-[#f6f9fe]">
-                  {m.year.slice(2)}
-                </span>
-                <div className="lg:mt-5">
-                  <p className="text-[13px] font-bold text-brand">{m.year}</p>
-                  <h3 className="mt-1 text-[16px] font-semibold text-ink">{m.title}</h3>
-                  <p className="mt-2 text-[13px] leading-relaxed text-slate-600">{m.text}</p>
-                </div>
+                <Check
+                  className="mt-1 size-4 shrink-0 text-brand"
+                  strokeWidth={2}
+                  aria-hidden="true"
+                />
+                {service}
               </li>
             ))}
-          </ol>
+          </ul>
         </div>
       </section>
 
-      {/* Team */}
-      <section className="mx-auto max-w-[1280px] px-4 pt-20 sm:px-6 lg:px-10">
-        <SectionHeading eyebrow="Our Team" title="Meet the People Behind Your Numbers" divider />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {team.map((member) => (
-            <Card
-              key={member.name}
-              className="group gap-0 overflow-hidden rounded-xl bg-white p-0 shadow-[0_6px_24px_-10px_rgba(15,29,51,0.12)] ring-slate-100"
-            >
-              <div className="overflow-hidden">
-                <Image
-                  src={member.photo}
-                  alt={member.name}
-                  width={450}
-                  height={500}
-                  className="aspect-[9/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-5 text-center">
-                <h3 className="text-[15px] font-semibold text-ink">{member.name}</h3>
-                <p className="mt-1 text-[12.5px] text-brand">{member.role}</p>
-              </div>
-            </Card>
-          ))}
+      <section className="bg-brand-soft/60 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
+        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[1fr_2fr] lg:gap-20">
+          <h2 className="text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
+            Our Approach
+          </h2>
+          <div>
+            <p className="text-xl leading-[1.45] font-semibold text-ink sm:text-2xl">
+              We believe that effective outsourcing should feel like a natural extension of your
+              existing team. That is why we focus on clear communication, structured workflows,
+              secure access, and consistent delivery.
+            </p>
+            <div className="mt-8 grid gap-6 text-[15px] leading-7 text-slate-600 md:grid-cols-2">
+              <p>
+                Our process begins by understanding your business, software, reporting requirements,
+                and deadlines. We then align our support with your preferred systems and working
+                methods.
+              </p>
+              <p>
+                Every engagement is supported by clear documentation, quality review procedures, and
+                professional oversight from experienced Chartered Accountants.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <Testimonials />
-      <CtaBanner />
+      <section className="bg-navy-deep px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-10 lg:py-24">
+        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
+          <div>
+            <h2 className="text-3xl leading-tight font-semibold tracking-tight text-white sm:text-4xl">
+              Our Commitment
+            </h2>
+            <p className="mt-6 text-xl leading-[1.45] font-semibold text-white sm:text-2xl">
+              At Booksy Global, we are committed to helping clients gain clearer financial
+              information, improve operational capacity, and focus more time on business growth.
+            </p>
+          </div>
+          <div>
+            <p className="mb-3 text-sm font-medium text-blue-100">We aim to provide:</p>
+            <ul>
+              {commitments.map((commitment) => (
+                <li
+                  key={commitment}
+                  className="flex items-start gap-3 border-b border-white/15 py-3 text-sm leading-6 text-white/90 sm:text-[15px]"
+                >
+                  <Check
+                    className="mt-1 size-4 shrink-0 text-sky-300"
+                    strokeWidth={2}
+                    aria-hidden="true"
+                  />
+                  {commitment}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
+        <div className="mx-auto max-w-[1280px]">
+          <h2 className="text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
+            Leadership & Practice Governance
+          </h2>
+          <p className="mt-5 max-w-3xl text-[15px] leading-7 text-slate-600 sm:text-base">
+            Booksy Global is supported by qualified Chartered Accountants who oversee
+            country-specific accounting and outsourcing operations.
+          </p>
+          <div className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10">
+            {leaders.map(({ initials, name, role, experience }) => (
+              <article key={name} className="group flex flex-col">
+                <div className="flex aspect-[4/5] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-soft to-[#dce9fc]">
+                  <span className="text-6xl font-semibold text-brand" aria-hidden="true">
+                    {initials}
+                  </span>
+                </div>
+                <div className="mt-5">
+                  <h3 className="text-lg leading-snug font-semibold text-ink">{name}</h3>
+                  <p className="mt-1.5 text-sm font-semibold text-brand">{role}</p>
+                  <p className="mt-4 text-sm leading-[1.7] text-slate-600">{experience}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   )
 }

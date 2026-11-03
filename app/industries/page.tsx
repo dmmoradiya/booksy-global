@@ -1,18 +1,22 @@
 import type { Metadata } from "next"
+
 import PageContent from "@/site-pages/industries"
+
 export const metadata: Metadata = {
-  title: "Accounting Services by Industry",
+  title: "Industries We Serve | Booksy Global",
   description:
-    "Industry focused accounting and tax support for retail, e-commerce, SaaS, healthcare, real estate, restaurants, manufacturing, and hospitality.",
+    "Bookkeeping and accounting support for Australian accounting firms, e-commerce businesses, startups, professional services, hotels, small businesses, and SMSF administrators.",
   keywords: [
-    "industry accounting",
-    "retail accountant",
-    "SaaS accounting",
-    "healthcare accounting",
-    "real estate accounting",
-    "restaurant bookkeeping",
+    "accounting support for Australian businesses",
+    "accounting firm bookkeeping support",
+    "e-commerce bookkeeping Australia",
+    "startup bookkeeping Australia",
+    "hotel bookkeeping support",
+    "small business accounting Australia",
+    "SMSF bookkeeping support",
   ],
 }
+
 export default function Page() {
   return <PageContent />
 }
