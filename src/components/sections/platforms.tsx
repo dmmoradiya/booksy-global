@@ -14,14 +14,14 @@ const platforms = [
 export function Platforms() {
   return (
     <section className="overflow-hidden bg-white py-14 sm:py-16">
-      <div className="mx-auto max-w-[1280px] px-4 text-center sm:px-6 lg:px-10">
+      <div className="mx-auto max-w-[1360px] px-4 text-center sm:px-6 lg:px-10">
         <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">
           Technology & workflows
         </p>
         <h2 className="mt-3 text-balance text-3xl leading-tight font-semibold tracking-tight text-slate-950 sm:text-4xl">
           Powered by Trusted Accounting Technology
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-7 text-slate-600">
+        <p className="mx-auto mt-4 max-w-2xl text-[16.6px] leading-7 text-slate-600">
           Our team uses modern accounting, finance, and payroll platforms to deliver accurate
           bookkeeping, reliable reporting, and consistent support.
         </p>

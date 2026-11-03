@@ -54,6 +54,16 @@
 
 :root {
   color-scheme: light;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.3125rem;
+  --text-2xl: 1.625rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.375rem;
+  --text-5xl: 3.125rem;
+  --text-6xl: 3.875rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -138,7 +148,7 @@
     @apply font-sans scroll-smooth;
   }
 }
-/* FinCore theme */
+/* Booksy theme */
 
 @keyframes service-card-reveal {
   from {

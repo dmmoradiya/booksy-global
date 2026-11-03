@@ -9,7 +9,7 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+    <section className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-10">
       <div className="grid grid-cols-2 gap-y-8 rounded-xl bg-[#f1f6fd] px-4 py-8 lg:grid-cols-4">
         {stats.map(({ icon: Icon, value, label }, i) => (
           <div
@@ -18,8 +18,8 @@ export function Stats() {
           >
             <Icon className="size-10 shrink-0 text-navy" strokeWidth={1.4} />
             <div>
-              <p className="text-[28px] leading-none font-bold text-navy sm:text-[32px]">{value}</p>
-              <p className="mt-2 text-[13px] text-ink">{label}</p>
+              <p className="text-[30.9px] leading-none font-bold text-navy sm:text-[35.3px]">{value}</p>
+              <p className="mt-2 text-[14.4px] text-ink">{label}</p>
             </div>
           </div>
         ))}

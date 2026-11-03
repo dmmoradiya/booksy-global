@@ -28,7 +28,7 @@ export default function ResourcesPage() {
       />
 
       {/* Blog */}
-      <section className="mx-auto max-w-[1280px] px-4 py-20 sm:px-6 lg:px-10">
+      <section className="mx-auto max-w-[1360px] px-4 py-20 sm:px-6 lg:px-10">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading eyebrow="Blog & Insights" title="Latest Articles" align="left" divider />
           <Tabs value={category} onValueChange={(v) => setCategory(v as typeof category)}>
@@ -37,7 +37,7 @@ export default function ResourcesPage() {
                 <TabsTrigger
                   key={c}
                   value={c}
-                  className="h-9 rounded-md px-4 text-[13px] data-active:bg-navy data-active:text-white"
+                  className="h-9 rounded-md px-4 text-[14.4px] data-active:bg-navy data-active:text-white"
                 >
                   {c}
                 </TabsTrigger>
@@ -60,12 +60,12 @@ export default function ResourcesPage() {
                   height={750}
                   className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <Badge className="absolute top-4 left-4 h-6 rounded-md bg-white px-2.5 text-[11.5px] font-semibold text-navy">
+                <Badge className="absolute top-4 left-4 h-6 rounded-md bg-white px-2.5 text-[12.7px] font-semibold text-navy">
                   {post.category}
                 </Badge>
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <div className="flex items-center gap-4 text-[12px] text-slate-500">
+                <div className="flex items-center gap-4 text-[13.2px] text-slate-500">
                   <span className="flex items-center gap-1.5">
                     <Calendar className="size-3.5" /> {post.date}
                   </span>
@@ -73,11 +73,11 @@ export default function ResourcesPage() {
                     <Clock className="size-3.5" /> {post.read}
                   </span>
                 </div>
-                <h3 className="mt-3 text-[16px] leading-snug font-semibold text-ink group-hover:text-brand">
+                <h3 className="mt-3 text-[17.6px] leading-snug font-semibold text-ink group-hover:text-brand">
                   {post.title}
                 </h3>
-                <p className="mt-2.5 text-[13px] leading-[1.75] text-slate-600">{post.excerpt}</p>
-                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[13px] font-semibold text-brand transition-[gap] group-hover:gap-3">
+                <p className="mt-2.5 text-[14.4px] leading-[1.75] text-slate-600">{post.excerpt}</p>
+                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[14.4px] font-semibold text-brand transition-[gap] group-hover:gap-3">
                   Read Article <ArrowRight className="size-4" />
                 </span>
               </div>

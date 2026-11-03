@@ -12,10 +12,12 @@ import {
   type LucideIcon,
 } from "lucide-react"
 
+export const bookingUrl = "https://calendar.app.google/wTYfcaGt1YWVKd3P7"
+
 export const contact = {
   phone: "+91 62803 47210",
   phoneHref: "tel:+916280347210",
-  email: "info@fincoreaccounting.com",
+  email: "info@booksyglobal.com",
   address: ["123, Health Street, Sector 45", "Your City, State 500001"],
   mapQuery: "123, Health Street, Sector 45, Your City, State 500001",
   hours: ["Mon – Fri: 9:00 AM – 6:00 PM", "Sat: 10:00 AM – 2:00 PM"],
@@ -221,7 +223,6 @@ export const services: Service[] = [
 
 export const navItems: NavItem[] = [
   { label: "Home", to: "/" },
-  { label: "About Us", to: "/about" },
   {
     label: "Services",
     to: "/services",
@@ -229,7 +230,8 @@ export const navItems: NavItem[] = [
   },
   { label: "Industries", to: "/industries" },
   { label: "Resources", to: "/resources" },
-  { label: "Contact", to: "/contact" },
+  { label: "About Us", to: "/about" },
+  { label: "Contact Us", to: "/contact" },
 ]
 
 export type Industry = { icon: LucideIcon; title: string; text: string; points: string[] }

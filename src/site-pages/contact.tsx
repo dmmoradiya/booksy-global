@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { contact } from "@/data/site"
+import { bookingUrl, contact } from "@/data/site"
 
 const engagementTypes = [
   "Ongoing Support",
@@ -90,7 +90,7 @@ export default function ContactPage() {
           className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0b192c]/95 via-[#0b192c]/75 to-[#0b192c]/45"
           aria-hidden="true"
         />
-        <div className="relative mx-auto flex min-h-[260px] max-w-[1280px] flex-col items-start justify-center px-4 py-16 sm:min-h-[320px] sm:px-6 lg:px-10">
+        <div className="relative mx-auto flex min-h-[260px] max-w-[1360px] flex-col items-start justify-center px-4 py-16 sm:min-h-[320px] sm:px-6 lg:px-4">
           <p className="text-xs font-bold tracking-[0.14em] text-blue-100 uppercase">
             Get in Touch
           </p>
@@ -101,9 +101,9 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-white px-4 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
-        <div className="mx-auto grid max-w-[1280px] gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.45fr)] lg:gap-12">
+        <div className="mx-auto grid max-w-[1360px] gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.45fr)] lg:gap-12">
           <div>
-            <p className="text-[15px] leading-7 text-slate-600 sm:text-base">
+            <p className="text-[16.6px] leading-7 text-slate-600 sm:text-base">
               Tell us about your bookkeeping, payroll, BAS, IAS, GST, reporting, compliance, or
               accounting outsourcing requirements. Our team will review your information and contact
               you to discuss the most suitable support model.
@@ -209,24 +209,26 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-white px-4 pb-12 sm:px-6 lg:px-10">
-        <div className="mx-auto max-w-[1280px]">
+        <div className="mx-auto max-w-[1360px]">
           <div className="flex flex-col items-start gap-6 rounded-2xl bg-navy px-6 py-8 text-white sm:px-10 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-center gap-5">
               <span className="flex size-16 shrink-0 items-center justify-center rounded-full bg-white text-navy">
                 <CalendarDays className="size-7" strokeWidth={1.6} aria-hidden="true" />
               </span>
               <div>
-                <h2 className="text-xl font-semibold text-white sm:text-[22px]">
+                <h2 className="text-xl font-semibold text-white sm:text-[24.3px]">
                   Ready to Take Control of Your Finances?
                 </h2>
-                <p className="mt-1.5 text-[13.5px] text-white/85">
+                <p className="mt-1.5 text-[14.9px] text-white/85">
                   Book a free consultation today and let&apos;s discuss the support you need.
                 </p>
               </div>
             </div>
             <Link
-              href="#contact-form"
-              className="inline-flex h-12 items-center justify-center rounded-md bg-white px-6 text-[13.5px] font-semibold text-navy transition-colors hover:bg-white/90"
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 items-center justify-center rounded-md bg-white px-6 text-[14.9px] font-semibold text-navy transition-colors hover:bg-white/90"
             >
               Book a Free Consultation
             </Link>

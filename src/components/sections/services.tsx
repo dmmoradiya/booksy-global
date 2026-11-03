@@ -33,7 +33,7 @@ function FlippingServiceCard({ service }: { service: (typeof services)[number] }
           <span className="flex size-12 items-center justify-center rounded-xl bg-brand-soft text-brand">
             <Icon className="size-6" strokeWidth={1.8} />
           </span>
-          <span className="mt-8 text-[11px] font-bold tracking-[0.12em] text-brand uppercase">
+          <span className="mt-8 text-[12.2px] font-bold tracking-[0.12em] text-brand uppercase">
             {service.category}
           </span>
           <span className="mt-3 text-xl leading-snug font-semibold tracking-tight text-ink">
@@ -51,7 +51,7 @@ function FlippingServiceCard({ service }: { service: (typeof services)[number] }
         >
           <span className="flex items-center justify-between gap-4 border-b border-slate-100 pb-4">
             <span className="min-w-0">
-              <span className="block text-[10px] font-bold tracking-[0.12em] text-brand uppercase">
+              <span className="block text-[11px] font-bold tracking-[0.12em] text-brand uppercase">
                 Included support
               </span>
               <span className="mt-1 block truncate text-base font-semibold text-ink">
@@ -64,7 +64,7 @@ function FlippingServiceCard({ service }: { service: (typeof services)[number] }
             {service.features.map((feature) => (
               <span
                 key={feature}
-                className="flex items-start gap-2 text-[12px] leading-[1.45] text-slate-700"
+                className="flex items-start gap-2 text-[13.2px] leading-[1.45] text-slate-700"
               >
                 <Check className="mt-0.5 size-3.5 shrink-0 text-brand" strokeWidth={2.5} />
                 <span>{feature}</span>
@@ -92,7 +92,7 @@ export function Services() {
 
   return (
     <section className="overflow-hidden bg-[#f6f8fa] py-20 sm:py-24">
-      <div className="relative mx-auto max-w-[1280px] px-4 text-center sm:px-6 lg:px-10">
+      <div className="relative mx-auto max-w-[1360px] px-4 text-center sm:px-6 lg:px-10">
         <div className="mx-auto max-w-3xl">
           <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">
             Service catalogue & capabilities
@@ -100,7 +100,7 @@ export function Services() {
           <h2 className="mt-3 text-balance text-3xl leading-tight font-semibold tracking-tight text-slate-950 sm:text-4xl">
             Australian Bookkeeping, Payroll & Compliance Support
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-7 text-slate-600">
+          <p className="mx-auto mt-4 max-w-2xl text-[16.6px] leading-7 text-slate-600">
             Flexible support for daily bookkeeping, payroll, lodgements, reporting, and the work
             that keeps accounting practices moving.
           </p>
@@ -127,10 +127,10 @@ export function Services() {
         </div>
       </div>
 
-      <div className="relative mx-auto mt-10 max-w-[1280px] sm:mt-10">
+      <div className="relative mx-auto mt-10 max-w-[1360px] px-4 sm:mt-10 sm:px-0">
         <div
           ref={trackRef}
-          className="services-card-track flex snap-x snap-mandatory gap-5 overflow-x-auto px-8 pb-5 sm:gap-6 sm:px-10"
+          className="services-card-track flex snap-x snap-mandatory gap-5 overflow-x-auto px-0 pb-5 sm:gap-6 sm:px-10"
           aria-label="Bookkeeping and compliance services"
         >
           {services.map((service) => (
@@ -143,7 +143,7 @@ export function Services() {
         />
       </div>
 
-      <div className="mx-auto mt-5 max-w-[1280px] px-4 text-center sm:px-6 lg:px-10">
+      <div className="mx-auto mt-5 max-w-[1360px] px-4 text-center sm:px-6 lg:px-10">
         <Link
           href="/services"
           className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-navy px-6 text-sm font-semibold text-white transition hover:bg-navy-deep"

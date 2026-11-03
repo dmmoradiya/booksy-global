@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 const testimonials = [
   {
     quote:
-      "FinCore Accounting has been a game-changer for our business. Their team is professional, responsive, and always looking out for our best interests.",
+      "Booksy Global has been a game-changer for our business. Their team is professional, responsive, and always looking out for our best interests.",
     name: "Sarah Johnson",
     role: "CEO, Bright Retail LLC",
     avatar:
@@ -27,7 +27,7 @@ const testimonials = [
   },
   {
     quote:
-      "Reliable, accurate, and trustworthy. FinCore Accounting gives us the confidence to focus on growing our business.",
+      "Reliable, accurate, and trustworthy. Booksy Global gives us the confidence to focus on growing our business.",
     name: "Priya Patel",
     role: "Owner, Patel Consulting",
     avatar:
@@ -73,7 +73,7 @@ export function Testimonials() {
   }, [])
 
   return (
-    <section className="mx-auto max-w-[1280px] px-4 pt-20 pb-16 sm:px-6 lg:px-10">
+    <section className="mx-auto max-w-[1360px] px-4 pt-20 pb-16 sm:px-6 lg:px-10">
       <SectionHeading eyebrow="Testimonials" title="What Our Clients Say" />
 
       <div className="mt-10 overflow-hidden px-1 py-2">
@@ -89,7 +89,7 @@ export function Testimonials() {
                     className="size-7 shrink-0 rotate-180 fill-brand text-brand"
                     strokeWidth={0}
                   />
-                  <p className="text-[13px] leading-[1.8] text-slate-600">{t.quote}</p>
+                  <p className="text-[14.4px] leading-[1.8] text-slate-600">{t.quote}</p>
                 </div>
                 <div className="mt-auto flex items-center gap-4 pt-7">
                   <Image
@@ -100,8 +100,8 @@ export function Testimonials() {
                     className="size-12 rounded-full object-cover"
                   />
                   <div>
-                    <p className="text-[14px] font-semibold text-ink">{t.name}</p>
-                    <p className="mt-0.5 text-[12px] text-slate-500">{t.role}</p>
+                    <p className="text-[15.4px] font-semibold text-ink">{t.name}</p>
+                    <p className="mt-0.5 text-[13.2px] text-slate-500">{t.role}</p>
                     <div className="mt-1.5 flex gap-1" aria-label="5 out of 5 stars">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star key={i} className="size-3.5 fill-amber-400 text-amber-400" />

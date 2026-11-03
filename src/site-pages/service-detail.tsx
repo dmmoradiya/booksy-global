@@ -14,8 +14,8 @@ export default function ServiceDetailPage({ slug }: { slug: string }) {
 
   return (
     <>
-      <section className="bg-[#f3f6f8] px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
-        <div className="mx-auto max-w-[1280px]">
+      <section className="bg-[#f3f6f8] px-4 py-12 sm:px-6 sm:py-16 lg:px-4">
+        <div className="mx-auto max-w-[1360px]">
           <nav
             aria-label="Breadcrumb"
             className="mb-8 flex items-center gap-2 text-sm text-slate-500"
@@ -56,7 +56,7 @@ export default function ServiceDetailPage({ slug }: { slug: string }) {
       </section>
 
       <section className="px-4 py-14 sm:px-6 sm:py-20 lg:px-10">
-        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-16">
+        <div className="mx-auto grid max-w-[1360px] gap-10 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-16">
           <div>
             <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">
               Service scope
@@ -93,7 +93,7 @@ export default function ServiceDetailPage({ slug }: { slug: string }) {
       </section>
 
       <section className="bg-[#f6f8fa] px-4 py-14 sm:px-6 sm:py-16 lg:px-10">
-        <div className="mx-auto max-w-[1280px]">
+        <div className="mx-auto max-w-[1360px]">
           <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
             <div>
               <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">
@@ -117,7 +117,7 @@ export default function ServiceDetailPage({ slug }: { slug: string }) {
                 href={"/services/" + item.slug}
                 className="group rounded-xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg"
               >
-                <p className="text-[10px] font-bold tracking-[0.12em] text-brand uppercase">
+                <p className="text-[11px] font-bold tracking-[0.12em] text-brand uppercase">
                   {item.category}
                 </p>
                 <h3 className="mt-2 font-semibold text-slate-900">{item.title}</h3>

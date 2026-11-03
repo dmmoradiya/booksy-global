@@ -7,7 +7,7 @@ import { ChevronDown, Menu, X } from "lucide-react"
 
 import { Logo } from "@/components/logo"
 import { buttonVariants } from "@/components/ui/button"
-import { navItems, type NavItem } from "@/data/site"
+import { bookingUrl, navItems, type NavItem } from "@/data/site"
 import { cn } from "@/lib/utils"
 
 function isActive(item: NavItem, pathname: string) {
@@ -20,7 +20,7 @@ function DesktopNavItem({ item, active }: { item: NavItem; active: boolean }) {
       <Link
         href={item.to}
         className={cn(
-          "relative flex items-center gap-1.5 py-7 text-[13.5px] font-medium text-ink transition-colors hover:text-brand",
+          "relative flex items-center gap-1.5 py-7 text-[14.9px] font-medium text-ink transition-colors hover:text-brand",
           active && "text-brand",
         )}
       >
@@ -43,7 +43,7 @@ function DesktopNavItem({ item, active }: { item: NavItem; active: boolean }) {
               <Link
                 key={child.to}
                 href={child.to}
-                className="block rounded-lg px-3 py-2.5 text-[13px] font-medium text-ink transition-colors hover:bg-brand-soft hover:text-brand"
+                className="block rounded-lg px-3 py-2.5 text-[14.4px] font-medium text-ink transition-colors hover:bg-brand-soft hover:text-brand"
               >
                 {child.label}
               </Link>
@@ -67,7 +67,7 @@ function HeaderContent({ pathname }: { pathname: string }) {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex h-[76px] max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto flex h-[76px] max-w-[1360px] items-center justify-between px-4 sm:px-6 lg:px-0">
         <Logo />
 
         <nav className="hidden items-center gap-9 lg:flex" aria-label="Primary">
@@ -78,10 +78,12 @@ function HeaderContent({ pathname }: { pathname: string }) {
 
         <div className="hidden items-center lg:flex">
           <Link
-            href="/contact"
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
               buttonVariants(),
-              "h-11 rounded-md bg-navy px-5 text-[13.5px] font-semibold",
+              "h-11 rounded-md bg-navy px-5 text-[14.9px] font-semibold",
             )}
           >
             Book a Consultation
@@ -137,7 +139,7 @@ function HeaderContent({ pathname }: { pathname: string }) {
                         <Link
                           key={child.to}
                           href={child.to}
-                          className="block py-2 text-[13px] text-slate-600"
+                          className="block py-2 text-[14.4px] text-slate-600"
                         >
                           {child.label}
                         </Link>
@@ -149,7 +151,9 @@ function HeaderContent({ pathname }: { pathname: string }) {
             })}
           </nav>
           <Link
-            href="/contact"
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(buttonVariants(), "mt-4 h-11 w-full rounded-md bg-navy font-semibold")}
           >
             Book a Consultation

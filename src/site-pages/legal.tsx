@@ -8,7 +8,7 @@ type LegalPageProps = { kind: "privacy" | "terms" }
 const content = {
   privacy: {
     title: "Privacy Policy",
-    description: "How FinCore Accounting collects, uses and protects your information.",
+    description: "How Booksy Global collects, uses and protects your information.",
     sections: [
       {
         h: "Information We Collect",
@@ -42,7 +42,7 @@ const content = {
       },
       {
         h: "Limitation of Liability",
-        p: "FinCore Accounting is not liable for decisions made based solely on general content published on this website.",
+        p: "Booksy Global is not liable for decisions made based solely on general content published on this website.",
       },
       {
         h: "Changes to These Terms",
@@ -63,14 +63,14 @@ export default function LegalPage({ kind }: LegalPageProps) {
         crumbs={[{ label: "Home", to: "/" }, { label: page.title }]}
       />
       <section className="mx-auto max-w-[820px] px-4 py-16 sm:px-6">
-        <p className="text-[13px] text-slate-500">Last updated: January 1, 2025</p>
+        <p className="text-[14.4px] text-slate-500">Last updated: January 1, 2025</p>
         {page.sections.map((s) => (
           <div key={s.h} className="mt-8">
-            <h2 className="text-[19px] font-semibold text-ink">{s.h}</h2>
-            <p className="mt-3 text-[14.5px] leading-[1.85] text-slate-600">{s.p}</p>
+            <h2 className="text-[21px] font-semibold text-ink">{s.h}</h2>
+            <p className="mt-3 text-[16px] leading-[1.85] text-slate-600">{s.p}</p>
           </div>
         ))}
-        <p className="mt-10 text-[14.5px] leading-[1.85] text-slate-600">
+        <p className="mt-10 text-[16px] leading-[1.85] text-slate-600">
           Questions? Email us at{" "}
           <a href={`mailto:${contact.email}`} className="font-medium text-brand hover:underline">
             {contact.email}

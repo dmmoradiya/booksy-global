@@ -75,7 +75,7 @@ export default function AboutPage() {
           className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0b192c]/85 via-[#0b192c]/65 to-[#0b192c]/35"
           aria-hidden="true"
         />
-        <div className="relative mx-auto flex min-h-[320px] max-w-[1280px] flex-col justify-center px-4 py-16 sm:min-h-[380px] sm:px-6 lg:px-10">
+        <div className="relative mx-auto flex min-h-[320px] max-w-[1360px] flex-col justify-center px-4 py-16 sm:min-h-[380px] sm:px-6 lg:px-4">
           <p className="text-xs font-bold tracking-[0.14em] text-blue-100 uppercase">About Us</p>
           <h1 className="mt-3 text-4xl leading-tight font-semibold tracking-tight text-white sm:text-5xl">
             About Booksy Global
@@ -84,7 +84,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
+        <div className="mx-auto grid max-w-[1360px] gap-10 lg:grid-cols-[0.85fr_1fr] lg:gap-20">
           <div>
             <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">
               About Booksy Global
@@ -93,7 +93,7 @@ export default function AboutPage() {
               Smart Accounting Support for Businesses and Practices That Want to Scale
             </h2>
           </div>
-          <div className="space-y-5 text-[15px] leading-7 text-slate-600 sm:text-base">
+          <div className="space-y-5 text-[16.6px] leading-7 text-slate-600 sm:text-base">
             <p>
               Booksy Global provides reliable bookkeeping, accounting, payroll, tax preparation,
               compliance, and financial reporting support to businesses and accounting practices
@@ -116,7 +116,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-[#f6f8fa]">
-        <div className="mx-auto grid max-w-[1280px] items-stretch gap-0 px-4 sm:px-6 lg:grid-cols-2 lg:px-10">
+        <div className="mx-auto grid max-w-[1360px] items-stretch gap-0 px-4 sm:px-6 lg:grid-cols-2 lg:px-10">
           <div className="relative h-72 overflow-hidden rounded-2xl sm:h-96 lg:my-16 lg:h-auto">
             <Image
               src="/about-workspace.avif"
@@ -132,7 +132,7 @@ export default function AboutPage() {
             <h2 className="mt-3 text-balance text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
               To Make Accounting Support More Accessible, Flexible, and Reliable
             </h2>
-            <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-600 sm:text-base">
+            <div className="mt-6 space-y-5 text-[16.6px] leading-7 text-slate-600 sm:text-base">
               <p>
                 Managing bookkeeping, payroll, reporting, and compliance work can take valuable time
                 away from running and growing a business. Booksy Global helps reduce that pressure
@@ -150,12 +150,12 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
+        <div className="mx-auto grid max-w-[1360px] gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
           <div>
             <h2 className="text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
               What We Do
             </h2>
-            <p className="mt-5 text-[15px] leading-7 text-slate-600 sm:text-base">
+            <p className="mt-5 text-[16.6px] leading-7 text-slate-600 sm:text-base">
               Our team supports a range of accounting and finance activities, including:
             </p>
           </div>
@@ -163,7 +163,7 @@ export default function AboutPage() {
             {services.map((service) => (
               <li
                 key={service}
-                className="flex items-start gap-3 border-b border-slate-200 py-3 text-sm leading-6 text-slate-700 sm:text-[15px]"
+                className="flex items-start gap-3 border-b border-slate-200 py-3 text-sm leading-6 text-slate-700 sm:text-[16.6px]"
               >
                 <Check
                   className="mt-1 size-4 shrink-0 text-brand"
@@ -178,7 +178,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-brand-soft/60 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[1fr_2fr] lg:gap-20">
+        <div className="mx-auto grid max-w-[1360px] gap-10 lg:grid-cols-[1fr_2fr] lg:gap-20">
           <h2 className="text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
             Our Approach
           </h2>
@@ -188,7 +188,7 @@ export default function AboutPage() {
               existing team. That is why we focus on clear communication, structured workflows,
               secure access, and consistent delivery.
             </p>
-            <div className="mt-8 grid gap-6 text-[15px] leading-7 text-slate-600 md:grid-cols-2">
+            <div className="mt-8 grid gap-6 text-[16.6px] leading-7 text-slate-600 md:grid-cols-2">
               <p>
                 Our process begins by understanding your business, software, reporting requirements,
                 and deadlines. We then align our support with your preferred systems and working
@@ -204,7 +204,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-navy-deep px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
+        <div className="mx-auto grid max-w-[1360px] gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
           <div>
             <h2 className="text-3xl leading-tight font-semibold tracking-tight text-white sm:text-4xl">
               Our Commitment
@@ -220,7 +220,7 @@ export default function AboutPage() {
               {commitments.map((commitment) => (
                 <li
                   key={commitment}
-                  className="flex items-start gap-3 border-b border-white/15 py-3 text-sm leading-6 text-white/90 sm:text-[15px]"
+                  className="flex items-start gap-3 border-b border-white/15 py-3 text-sm leading-6 text-white/90 sm:text-[16.6px]"
                 >
                   <Check
                     className="mt-1 size-4 shrink-0 text-sky-300"
@@ -236,11 +236,11 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
-        <div className="mx-auto max-w-[1280px]">
+        <div className="mx-auto max-w-[1360px]">
           <h2 className="text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
             Leadership & Practice Governance
           </h2>
-          <p className="mt-5 max-w-3xl text-[15px] leading-7 text-slate-600 sm:text-base">
+          <p className="mt-5 max-w-3xl text-[16.6px] leading-7 text-slate-600 sm:text-base">
             Booksy Global is supported by qualified Chartered Accountants who oversee
             country-specific accounting and outsourcing operations.
           </p>

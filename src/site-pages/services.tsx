@@ -21,7 +21,7 @@ export default function ServicesPage() {
           className="absolute inset-0 bg-gradient-to-r from-[#0b172b]/95 via-[#0b172b]/80 to-[#0b172b]/35"
           aria-hidden="true"
         />
-        <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 py-24 sm:px-10 md:py-28 lg:px-12">
+        <div className="relative z-10 mx-auto w-full max-w-[1360px] px-6 py-24 sm:px-10 md:py-28 lg:px-4">
           <div className="max-w-[850px]">
             <p className="text-xs font-bold tracking-[0.16em] text-brand-200 uppercase">
               Service catalogue & capabilities
@@ -51,7 +51,7 @@ export default function ServicesPage() {
         className="scroll-mt-20 border-y border-slate-200 bg-white"
       >
         <div className="w-full px-4 py-5 sm:px-6 lg:px-10">
-          <p className="mb-3 text-[10px] font-bold tracking-[0.14em] text-slate-500 uppercase">
+          <p className="mb-3 text-[11px] font-bold tracking-[0.14em] text-slate-500 uppercase">
             Index of practice areas
           </p>
           <div className="practice-index-track flex gap-2 overflow-x-auto pb-2 scroll-smooth">
@@ -61,10 +61,10 @@ export default function ServicesPage() {
                 href={"#" + service.slug}
                 className="min-w-[132px] shrink-0 rounded-md border border-slate-200 bg-[#f8fafb] px-3 py-2.5 transition hover:border-brand/40 hover:bg-brand-soft"
               >
-                <span className="block font-mono text-[10px] font-semibold text-brand">
+                <span className="block font-mono text-[11px] font-semibold text-brand">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="mt-1 block text-[11px] leading-snug font-medium text-slate-700">
+                <span className="mt-1 block text-[12.2px] leading-snug font-medium text-slate-700">
                   {service.title}
                 </span>
               </Link>
@@ -77,7 +77,7 @@ export default function ServicesPage() {
         aria-label="Our practice areas"
         className="bg-[#f3f6f8] px-4 py-10 sm:px-6 sm:py-14 lg:px-10"
       >
-        <div className="mx-auto max-w-[1280px] space-y-5">
+        <div className="mx-auto max-w-[1360px] space-y-5">
           {services.map((service, index) => (
             <article
               key={service.slug}
@@ -94,14 +94,14 @@ export default function ServicesPage() {
                     <span className="font-mono text-3xl leading-none font-semibold text-brand sm:text-4xl">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-[10px] font-bold tracking-[0.13em] text-brand uppercase">
+                    <span className="text-[11px] font-bold tracking-[0.13em] text-brand uppercase">
                       {service.category}
                     </span>
                   </div>
-                  <h2 className="mt-4 max-w-[450px] text-2xl leading-tight font-semibold tracking-tight text-slate-950 sm:text-[28px]">
+                  <h2 className="mt-4 max-w-[450px] text-2xl leading-tight font-semibold tracking-tight text-slate-950 sm:text-[30.9px]">
                     {service.title}
                   </h2>
-                  <p className="mt-3 max-w-[460px] text-[13px] leading-[1.75] text-slate-600 sm:text-sm">
+                  <p className="mt-3 max-w-[460px] text-[14.4px] leading-[1.75] text-slate-600 sm:text-sm">
                     {service.intro}
                   </p>
                 </div>
@@ -110,7 +110,7 @@ export default function ServicesPage() {
                   {service.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-2.5 text-[12px] leading-[1.55] text-slate-700 sm:text-[13px]"
+                      className="flex items-start gap-2.5 text-[13.2px] leading-[1.55] text-slate-700 sm:text-[14.4px]"
                     >
                       <Check className="mt-0.5 size-3.5 shrink-0 text-brand" strokeWidth={2.5} />
                       <span>{feature}</span>
@@ -124,9 +124,9 @@ export default function ServicesPage() {
       </section>
 
       <section className="bg-[#0b1b2f] px-4 py-14 text-white sm:px-6 sm:py-16 lg:px-10">
-        <div className="mx-auto flex max-w-[1280px] flex-col justify-between gap-8 rounded-xl border border-white/10 bg-white/[0.03] p-6 sm:p-9 md:flex-row md:items-center lg:p-10">
+        <div className="mx-auto flex max-w-[1360px] flex-col justify-between gap-8 rounded-xl border border-white/10 bg-white/[0.03] p-6 sm:p-9 md:flex-row md:items-center lg:p-10">
           <div className="max-w-2xl">
-            <p className="text-[10px] font-bold tracking-[0.15em] text-brand-200 uppercase">
+            <p className="text-[11px] font-bold tracking-[0.15em] text-brand-200 uppercase">
               Start a conversation
             </p>
             <h2 className="mt-3 text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">

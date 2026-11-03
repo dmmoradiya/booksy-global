@@ -30,7 +30,7 @@ const socials = [
 function FooterColumn({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h3 className="text-[15px] font-semibold text-white">{title}</h3>
+      <h3 className="text-[16.6px] font-semibold text-white">{title}</h3>
       <div className="mt-5">{children}</div>
     </div>
   )
@@ -47,10 +47,10 @@ export function Footer() {
 
   return (
     <footer className="mt-2 bg-navy-deep pt-16 text-white/80">
-      <div className="mx-auto grid max-w-[1280px] gap-10 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-[1.4fr_0.9fr_1fr_1.2fr_1.3fr] lg:px-10">
+      <div className="mx-auto grid max-w-[1360px] gap-10 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-[1.4fr_0.9fr_1fr_1.2fr_1.3fr] lg:px-10">
         <div>
           <Logo variant="light" />
-          <p className="mt-5 max-w-[260px] text-[13px] leading-[1.8]">
+          <p className="mt-5 max-w-[260px] text-[14.4px] leading-[1.8]">
             Trusted accounting and advisory services to help businesses stay compliant, save taxes,
             and grow with confidence.
           </p>
@@ -68,7 +68,7 @@ export function Footer() {
         </div>
 
         <FooterColumn title="Quick Links">
-          <ul className="space-y-3 text-[13px]">
+          <ul className="space-y-3 text-[14.4px]">
             {quickLinks.map((l) => (
               <li key={l.to}>
                 <Link href={l.to} className="transition-colors hover:text-white">
@@ -80,7 +80,7 @@ export function Footer() {
         </FooterColumn>
 
         <FooterColumn title="Our Services">
-          <ul className="space-y-3 text-[13px]">
+          <ul className="space-y-3 text-[14.4px]">
             {serviceLinks.map((l) => (
               <li key={l.to}>
                 <Link href={l.to} className="transition-colors hover:text-white">
@@ -92,7 +92,7 @@ export function Footer() {
         </FooterColumn>
 
         <FooterColumn title="Contact Us">
-          <ul className="space-y-4 text-[13px] leading-relaxed">
+          <ul className="space-y-4 text-[14.4px] leading-relaxed">
             <li className="flex gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-white" />
               <span>
@@ -111,18 +111,18 @@ export function Footer() {
             </li>
             <li>
               <a
-                href="mailto:info@fincoreaccounting.com"
+                href="mailto:info@booksyglobal.com"
                 className="flex gap-3 break-all hover:text-white"
               >
                 <Mail className="mt-0.5 size-4 shrink-0 text-white" />
-                info@fincoreaccounting.com
+                info@booksyglobal.com
               </a>
             </li>
           </ul>
         </FooterColumn>
 
         <FooterColumn title="Newsletter">
-          <p className="text-[13px] leading-[1.8]">
+          <p className="text-[14.4px] leading-[1.8]">
             Subscribe to get financial tips, updates, and insights.
           </p>
           <form onSubmit={onSubmit} className="mt-5 flex">
@@ -131,7 +131,7 @@ export function Footer() {
               required
               placeholder="Enter your email"
               aria-label="Email address"
-              className="h-11 rounded-r-none border-0 bg-white px-4 text-[13px] text-ink placeholder:text-slate-400 dark:bg-white"
+              className="h-11 rounded-r-none border-0 bg-white px-4 text-[14.4px] text-ink placeholder:text-slate-400 dark:bg-white"
             />
             <Button
               type="submit"
@@ -141,14 +141,14 @@ export function Footer() {
               <Send className="size-4" />
             </Button>
           </form>
-          {subscribed && <p className="mt-3 text-[12px] text-white">Thanks for subscribing!</p>}
+          {subscribed && <p className="mt-3 text-[13.2px] text-white">Thanks for subscribing!</p>}
         </FooterColumn>
       </div>
 
-      <div className="mx-auto mt-14 max-w-[1280px] px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto mt-14 max-w-[1360px] px-4 sm:px-6 lg:px-10">
         <Separator className="bg-white/10" />
-        <div className="flex flex-col items-center justify-between gap-3 py-6 text-[12px] sm:flex-row">
-          <p>© 2025 FinCore Accounting. All Rights Reserved.</p>
+        <div className="flex flex-col items-center justify-between gap-3 py-6 text-[13.2px] sm:flex-row">
+          <p>© 2025 Booksy Global. All Rights Reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-white">
               Privacy Policy

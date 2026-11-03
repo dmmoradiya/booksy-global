@@ -23,7 +23,7 @@ export function Hero() {
         className="absolute inset-0 bg-gradient-to-r from-[#0b122a]/95 via-[#0b122a]/80 to-[#0b122a]/35"
         aria-hidden="true"
       />
-      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 py-24 sm:px-10 md:py-32 lg:px-12">
+      <div className="relative z-10 mx-auto w-full max-w-[1360px] px-6 py-24 sm:px-10 md:py-32 lg:px-4">
         <div className="max-w-[720px]">
           <p className="text-sm font-semibold tracking-wide text-blue-200">
             Australian Bookkeeping &amp; Compliance Services
@@ -41,7 +41,7 @@ export function Hero() {
               href="/contact"
               className={cn(
                 buttonVariants(),
-                "h-12 rounded-md bg-white px-6 text-[14px] font-semibold text-[#101a35] hover:bg-slate-100",
+                "h-12 rounded-md bg-white px-6 text-[15.4px] font-semibold text-[#101a35] hover:bg-slate-100",
               )}
             >
               Discuss Your Needs
@@ -50,7 +50,7 @@ export function Hero() {
               href="/services"
               className={cn(
                 buttonVariants({ variant: "outline" }),
-                "h-12 rounded-md border-white/60 bg-transparent px-6 text-[14px] font-semibold text-white hover:bg-white/10 hover:text-white",
+                "h-12 rounded-md border-white/60 bg-transparent px-6 text-[15.4px] font-semibold text-white hover:bg-white/10 hover:text-white",
               )}
             >
               Our Services

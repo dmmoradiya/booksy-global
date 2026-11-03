@@ -1,6 +1,6 @@
-# FinCore Accounting website
+# Booksy Global website
 
-A responsive multi-page accounting firm website built with Next.js App Router, React 19, TypeScript, and Tailwind CSS v4. The visual design, page content, shared sections, and UI components are ported from the original FinCore React site.
+A responsive multi-page accounting firm website built with Next.js App Router, React 19, TypeScript, and Tailwind CSS v4. The visual design, page content, shared sections, and UI components are ported from the original Booksy React site.
 
 ## Run locally
 

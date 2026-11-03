@@ -22,9 +22,9 @@ const benefits = [
 export function BenefitsBar({ overlapHero = false }: { overlapHero?: boolean }) {
   return (
     <section
-      className={`relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10 ${overlapHero ? "-mt-4 before:absolute before:top-4 before:bottom-0 before:left-1/2 before:z-0 before:w-screen before:-translate-x-1/2 before:bg-[#f6f8fa] before:content-[''] lg:-mt-20 lg:before:top-20" : ""}`}
+      className={`relative z-10 mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-4 ${overlapHero ? "mt-4 before:absolute before:top-4 before:bottom-0 before:left-1/2 before:z-0 before:w-screen before:-translate-x-1/2 before:bg-[#f6f8fa] before:content-[''] lg:-mt-20 lg:before:top-20" : ""}`}
     >
-      <div className="relative z-10 grid gap-6 rounded-2xl bg-navy px-6 py-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:px-4">
+      <div className="relative z-10 grid gap-4 rounded-2xl bg-navy px-5 py-6 sm:grid-cols-2 sm:gap-6 sm:px-6 sm:py-8 lg:grid-cols-4 lg:gap-0 lg:px-4">
         {benefits.map(({ icon: Icon, title, text }, i) => (
           <div
             key={title}
@@ -34,8 +34,8 @@ export function BenefitsBar({ overlapHero = false }: { overlapHero?: boolean }) 
               <Icon className="size-6" strokeWidth={1.7} />
             </span>
             <div>
-              <h3 className="text-[15px] font-semibold text-white">{title}</h3>
-              <p className="mt-1.5 max-w-[190px] text-[13px] leading-relaxed text-white/80">
+              <h3 className="text-[16.6px] font-semibold text-white">{title}</h3>
+              <p className="mt-1.5 max-w-[190px] text-[14.4px] leading-relaxed text-white/80">
                 {text}
               </p>
             </div>

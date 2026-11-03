@@ -26,7 +26,7 @@ const steps = [
 export function HowWeWork() {
   return (
     <section className="overflow-hidden bg-[#f6f8fa] px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1360px]">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">
             A clear path forward
@@ -34,7 +34,7 @@ export function HowWeWork() {
           <h2 className="mt-3 text-balance text-3xl leading-tight font-semibold tracking-tight text-slate-950 sm:text-4xl">
             Simple, Secure Onboarding
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-[15px] leading-7 text-slate-600">
+          <p className="mx-auto mt-4 max-w-xl text-[16.6px] leading-7 text-slate-600">
             A disciplined, phased journey designed to seamlessly embed Australian bookkeeping and
             accounting support into your existing practice.
           </p>

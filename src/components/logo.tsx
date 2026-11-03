@@ -37,7 +37,7 @@ export function Logo({ variant = "dark", className }: LogoProps) {
     <Link
       href="/"
       className={cn("flex items-center gap-2", className)}
-      aria-label="FinCore Accounting home"
+      aria-label="Booksy Global home"
     >
       <svg viewBox="0 0 32 32" className="size-8 shrink-0" aria-hidden="true">
         <rect x="2" y="17" width="7" height="13" rx="1.2" fill={light ? "#ffffff" : "#1a63d6"} />
@@ -46,17 +46,17 @@ export function Logo({ variant = "dark", className }: LogoProps) {
       </svg>
       <span className="flex flex-col leading-none">
         <span
-          className={cn("text-[22px] font-bold tracking-tight", light ? "text-white" : "text-navy")}
+          className={cn("text-[24.3px] font-bold tracking-tight", light ? "text-white" : "text-navy")}
         >
-          FinCore
+          Booksy
         </span>
         <span
           className={cn(
-            "mt-0.5 text-[8.5px] font-semibold tracking-[0.32em]",
+            "mt-0.5 text-[9.3px] font-semibold tracking-[0.32em]",
             light ? "text-white/80" : "text-navy/80",
           )}
         >
-          ACCOUNTING
+          GLOBAL
         </span>
       </span>
     </Link>

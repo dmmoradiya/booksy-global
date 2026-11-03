@@ -36,7 +36,7 @@ const reasons = [
 export function WhyChooseUs() {
   return (
     <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1360px]">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">
             Institutional standards

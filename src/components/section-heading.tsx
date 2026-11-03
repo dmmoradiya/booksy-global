@@ -33,7 +33,7 @@ export function SectionHeading({
   return (
     <div className={cn(center && "text-center", className)}>
       <Eyebrow>{eyebrow}</Eyebrow>
-      <h2 className="mt-3 text-[28px] leading-tight font-bold tracking-tight text-ink sm:text-[32px]">
+      <h2 className="mt-3 text-[30.9px] leading-tight font-bold tracking-tight text-ink sm:text-[35.3px]">
         {title}
       </h2>
       {divider && (

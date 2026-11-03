@@ -24,7 +24,7 @@ export default function IndustriesPage() {
           className="absolute inset-0 bg-gradient-to-r from-[#0b122a]/95 via-[#0b122a]/80 to-[#0b122a]/30"
           aria-hidden="true"
         />
-        <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 py-24 sm:px-10 md:py-28 lg:px-12">
+        <div className="relative z-10 mx-auto w-full max-w-[1360px] px-6 py-24 sm:px-10 md:py-28 lg:px-4">
           <div className="max-w-[850px]">
             <p className="text-xs font-bold tracking-[0.16em] text-blue-200 uppercase">
               Sectors & practices
@@ -65,17 +65,17 @@ export default function IndustriesPage() {
                 <span className="flex size-14 items-center justify-center rounded-full bg-brand-soft text-navy transition-colors group-hover:bg-white/10 group-hover:text-white">
                   <Icon className="size-7" strokeWidth={1.5} />
                 </span>
-                <h3 className="mt-5 text-[16px] font-semibold text-ink transition-colors group-hover:text-white">
+                <h3 className="mt-5 text-[17.6px] font-semibold text-ink transition-colors group-hover:text-white">
                   {title}
                 </h3>
-                <p className="mt-2.5 text-[13px] leading-[1.75] text-slate-600 transition-colors group-hover:text-white/80">
+                <p className="mt-2.5 text-[14.4px] leading-[1.75] text-slate-600 transition-colors group-hover:text-white/80">
                   {text}
                 </p>
                 <ul className="mt-5 space-y-2">
                   {points.map((point) => (
                     <li
                       key={point}
-                      className="flex items-start gap-2 text-[12.5px] leading-[1.5] font-medium text-ink transition-colors group-hover:text-white"
+                      className="flex items-start gap-2 text-[13.8px] leading-[1.5] font-medium text-ink transition-colors group-hover:text-white"
                     >
                       <Check
                         className="mt-0.5 size-4 shrink-0 text-brand group-hover:text-white"
