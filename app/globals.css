@@ -254,12 +254,8 @@
 
 .platform-marquee-track {
   animation: platform-marquee-scroll 34s linear infinite;
+  animation-play-state: running !important;
   will-change: transform;
-}
-
-.platform-marquee:hover .platform-marquee-track,
-.platform-marquee:focus-within .platform-marquee-track {
-  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {

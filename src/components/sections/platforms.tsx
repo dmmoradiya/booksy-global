@@ -38,7 +38,7 @@ export function Platforms() {
                   aria-label={name}
                   tabIndex={0}
                   title={name}
-                  className="flex h-[min(9vw,120px)] w-[14.285vw] shrink-0 items-center justify-center"
+                  className="flex h-[min(24vw,120px)] w-[28vw] shrink-0 items-center justify-center sm:h-[min(9vw,120px)] sm:w-[14.285vw]"
                 >
                   {logo ? (
                     <Image
@@ -52,7 +52,7 @@ export function Platforms() {
                     />
                   ) : (
                     <span
-                      className="text-center text-xl leading-tight font-bold tracking-tight text-ink"
+                      className="whitespace-nowrap text-center text-base leading-tight font-bold tracking-tight text-ink sm:text-xl"
                       aria-hidden="true"
                     >
                       {wordmark}
