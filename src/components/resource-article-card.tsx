@@ -2,7 +2,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
-import { Badge } from "@/components/ui/badge"
 import type { ResourceArticleData } from "@/data/articles"
 
 export function ResourceArticleCard({ article }: { article: ResourceArticleData }) {
@@ -17,9 +16,6 @@ export function ResourceArticleCard({ article }: { article: ResourceArticleData 
             height={750}
             className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <Badge className="absolute top-4 left-4 h-6 rounded-md bg-white px-2.5 text-[12.7px] font-semibold text-navy">
-            {article.category}
-          </Badge>
         </div>
         <div className="flex flex-1 flex-col p-6 sm:p-7">
           <h2 className="text-[19px] leading-snug font-semibold text-ink transition-colors group-hover:text-brand sm:text-xl">

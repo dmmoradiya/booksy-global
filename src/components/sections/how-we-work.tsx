@@ -1,4 +1,7 @@
+"use client"
+
 import { BarChart3, ClipboardCheck, FileText, LockKeyhole, Pin } from "lucide-react"
+import { countryDetails, useCountry } from "@/lib/country"
 
 const steps = [
   {
@@ -24,6 +27,7 @@ const steps = [
 ]
 
 export function HowWeWork() {
+  const region = countryDetails[useCountry()]
   return (
     <section className="overflow-hidden bg-[#f6f8fa] px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
       <div className="mx-auto max-w-[1360px]">
@@ -35,8 +39,8 @@ export function HowWeWork() {
             Simple, Secure Onboarding
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-[16.6px] leading-7 text-slate-600">
-            A disciplined, phased journey designed to seamlessly embed Australian bookkeeping and
-            accounting support into your existing practice.
+            A disciplined, phased journey designed to seamlessly embed {region.adjective}{" "}
+            bookkeeping and accounting support into your existing practice.
           </p>
         </div>
 

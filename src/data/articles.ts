@@ -22,9 +22,8 @@ export const resourceArticles: ResourceArticleData[] = [
       "The Strategic Advantage: How Outsourcing Accounting and Bookkeeping Powers Growth for Australian Firms & Businesses",
     excerpt:
       "Between ATO compliance, payroll awards, talent shortages, and rising overheads, financial management can become a bottleneck. Learn how outsourcing helps Australian firms and businesses gain capacity, strengthen compliance, and focus on growth.",
-    image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Accounting papers and financial records on a desk",
+    image: "/images/resources/blog-strategic-advantage.jpg",
+    imageAlt: "Accountant reviewing business charts and financial reports on a laptop",
     introduction: [
       "Running a business or managing an accounting practice in Australia has never been more demanding. Between navigating complex Australian Taxation Office (ATO) compliance, managing payroll awards, combating severe talent shortages, and handling rising operational overheads, financial management can quickly become a bottleneck.",
       "Whether you are an accounting practice partner trying to expand capacity without burning out your team, or an SME owner drowning in receipts and lodgement deadlines, outsourcing is no longer just a cost-cutting tactic—it is a growth engine.",
@@ -114,9 +113,8 @@ export const resourceArticles: ResourceArticleData[] = [
     title: "How to Outsource Accounting: A Practical Guide for Businesses and Accounting Firms",
     excerpt:
       "A practical guide to defining accounting support, aligning systems, setting secure workflows, and building a scalable outsourcing relationship.",
-    image:
-      "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Financial documents and accounting records on a desk",
+    image: "/images/resources/blog-outsourcing-guide.jpg",
+    imageAlt: "Meeting room prepared for an accounting outsourcing discussion",
     introduction: [
       "Outsourcing accounting has become a practical way for businesses and accounting firms to strengthen finance operations, manage capacity, improve turnaround times, and access skilled accounting resources without continuously expanding internal headcount.",
       "A successful outsourcing arrangement is not simply about assigning tasks to an external team. It is about creating a structured working relationship in which the outsourced team operates within approved systems, follows defined processes, and supports the internal finance team or accounting practice.",
@@ -196,9 +194,8 @@ export const resourceArticles: ResourceArticleData[] = [
     title: "Year-Ending Accounting Checklist For Australian Businesses",
     excerpt:
       "Use this practical checklist to organise reconciliations, GST and payroll records, invoices, assets, reports, and workpapers before year-end.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Business team reviewing financial figures and reports",
+    image: "/images/resources/blog-year-end-checklist.jpg",
+    imageAlt: "Calculator and accounting reports arranged on a desk",
     introduction: [
       "Year-end is an important time for every Australian business. Well-organised accounting records can make it easier to prepare financial reports, complete tax workpapers, review business performance, and provide the required information to your accountant or registered tax agent.",
       "Whether you operate as a sole trader, company, trust, partnership, e-commerce business, or professional service firm, the following checklist can help you prepare your books for year-end.",
@@ -443,9 +440,8 @@ export const resourceArticles: ResourceArticleData[] = [
     title: "BAS Compliance Review Before Year-End",
     excerpt:
       "A practical review framework for reconciling BAS figures, checking GST coding, e-commerce, payroll, source documents, and review-ready workpapers.",
-    image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Tax documents and accounting forms ready for review",
+    image: "/images/resources/blog-bas-compliance.jpg",
+    imageAlt: "Financial dashboard displayed on a laptop",
     introduction: [],
     sections: [
       {
@@ -660,9 +656,8 @@ export const resourceArticles: ResourceArticleData[] = [
       "Tax Returns for Companies, Trusts, Partnerships, and SMSFs: What Australian Businesses Need to Know",
     excerpt:
       "Understand how Australian entity structures affect tax returns, reporting obligations, common compliance risks, and year-end preparation.",
-    image:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Business professionals discussing financial and tax records",
+    image: "/images/resources/blog-entity-tax-returns.jpg",
+    imageAlt: "Bright modern office representing companies and business structures",
     introduction: [
       "Navigating the Australian tax landscape requires understanding how different legal structures impact compliance and annual tax lodgements. In Australia, operating as a company, family trust, partnership, or Self-Managed Superannuation Fund (SMSF) dictates distinct tax rates, reporting schedules, and regulatory rules set by the Australian Taxation Office (ATO).",
       "Below is an overview of tax return requirements for each major entity structure, common compliance traps, and how partnering with Booksy Global keeps your business or practice ahead of lodgement deadlines.",
@@ -818,9 +813,8 @@ export const resourceArticles: ResourceArticleData[] = [
       "White-Label Accounting Outsourcing: How Australian Accounting Firms Can Scale Without Hiring",
     excerpt:
       "Learn how white-label accounting support helps Australian practices expand production capacity, protect margins, and manage busy seasons without increasing internal headcount.",
-    image:
-      "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Accounting paperwork and calculator used for financial work",
+    image: "/images/resources/blog-white-label-outsourcing.jpg",
+    imageAlt: "Office buildings representing the growth of accounting practices",
     introduction: [
       "Running a public accounting practice in Australia has become a delicate balancing act. Client demands for strategic advisory are climbing, regulatory compliance from the ATO continues to tighten, and finding reliable local talent has never been harder.",
       "With vacancy fill rates for taxation accountants hovering around 55% and fewer graduates entering the pipeline, many firm owners find themselves trapped in a capacity bottleneck. When senior managers and partners spend billable hours reconciling ledgers, drafting working papers, or chasing data entry, practice margins erode and burnout escalates.",
@@ -893,9 +887,8 @@ export const resourceArticles: ResourceArticleData[] = [
       "Small Business Tax Deductions: The Australian Guide to Maximising Claims and Staying ATO-Compliant",
     excerpt:
       "Understand common Australian small-business deductions, substantiation rules, and common ATO compliance pitfalls.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Financial charts and reports used to review business figures",
+    image: "/images/resources/blog-small-business-deductions.jpg",
+    imageAlt: "Calculator and tax paperwork prepared for small business deductions",
     introduction: [
       "Every dollar legitimately claimed as a business tax deduction directly reduces your taxable income, preserving working capital and improving cash flow. Yet, thousands of Australian small businesses leave money on the table each financial year—or worse, trigger Australian Taxation Office (ATO) audits by claiming non-deductible private expenses.",
       "Understanding what you can claim, the record-keeping standards required, and where ATO scrutiny is sharpest is essential for running a profitable, tax-compliant operation.",

@@ -4,9 +4,11 @@ import { useRef, useState } from "react"
 import Link from "next/link"
 import { ArrowLeft, ArrowRight, Check, RotateCcw } from "lucide-react"
 
-import { services } from "@/data/site"
+import type { Service } from "@/data/services"
+import { countryContent } from "@/data/country-content"
+import { countryDetails, useCountry } from "@/lib/country"
 
-function FlippingServiceCard({ service }: { service: (typeof services)[number] }) {
+function FlippingServiceCard({ service }: { service: Service }) {
   const [isFlipped, setIsFlipped] = useState(false)
   const Icon = service.icon
 
@@ -81,6 +83,9 @@ function FlippingServiceCard({ service }: { service: (typeof services)[number] }
 }
 
 export function Services() {
+  const country = useCountry()
+  const services = countryContent[country].services
+  const region = countryDetails[country]
   const trackRef = useRef<HTMLDivElement>(null)
 
   function scrollCards(direction: -1 | 1) {
@@ -98,7 +103,7 @@ export function Services() {
             Service catalogue & capabilities
           </p>
           <h2 className="mt-3 text-balance text-3xl leading-tight font-semibold tracking-tight text-slate-950 sm:text-4xl">
-            Australian Bookkeeping, Payroll & Compliance Support
+            {region.adjective} Bookkeeping, Payroll & Compliance Support
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-[16.6px] leading-7 text-slate-600">
             Flexible support for daily bookkeeping, payroll, lodgements, reporting, and the work

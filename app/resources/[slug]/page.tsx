@@ -28,5 +28,5 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const article = resourceArticles.find((item) => item.slug === slug)
   if (!article) notFound()
 
-  return <ResourceArticle article={article} />
+  return <ResourceArticle slug={slug} />
 }

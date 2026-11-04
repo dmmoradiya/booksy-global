@@ -1,10 +1,14 @@
+"use client"
+
 import { ResourceArticleCard } from "@/components/resource-article-card"
 import { ResourceHero } from "@/components/resource-hero"
 import { SectionHeading } from "@/components/section-heading"
 import { CtaBanner } from "@/components/sections/cta-banner"
-import { resourceArticles } from "@/data/articles"
+import { countryContent } from "@/data/country-content"
+import { useCountry } from "@/lib/country"
 
 export default function ResourcesPage() {
+  const articles = countryContent[useCountry()].articles
   return (
     <>
       <ResourceHero
@@ -17,10 +21,15 @@ export default function ResourcesPage() {
 
       <section className="mx-auto max-w-[1360px] px-4 py-16 sm:px-6 sm:py-20 lg:px-10">
         <div className="mb-10">
-          <SectionHeading eyebrow="Blog & Insights" title="Latest Articles" align="center" divider />
+          <SectionHeading
+            eyebrow="Blog & Insights"
+            title="Latest Articles"
+            align="center"
+            divider
+          />
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {resourceArticles.map((article) => (
+          {articles.map((article) => (
             <ResourceArticleCard key={article.slug} article={article} />
           ))}
         </div>

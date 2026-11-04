@@ -2,6 +2,23 @@
 
 import Image from "next/image"
 import { Check } from "lucide-react"
+import { countryDetails, useCountry } from "@/lib/country"
+
+function localizeCountryText(text: string, country: "AU" | "US" | "UK") {
+  if (country === "AU") return text
+  const region = countryDetails[country]
+  return text
+    .replace(
+      "Country-specific support for the United States, Australia, and the United Kingdom",
+      "Country-specific support for " + region.phrase,
+    )
+    .replace(
+      "across the United States, Australia, and the United Kingdom",
+      "across " + region.phrase,
+    )
+    .replace("Australian and US businesses", country === "US" ? "US businesses" : "UK businesses")
+    .replace(/Australian/g, region.adjective)
+}
 
 const services = [
   "Daily bookkeeping and transaction categorisation",
@@ -49,6 +66,7 @@ const leaders = [
 ]
 
 export default function AboutPage() {
+  const country = useCountry()
   return (
     <>
       <section className="relative isolate overflow-hidden bg-navy text-white">
@@ -87,7 +105,10 @@ export default function AboutPage() {
             <p>
               Booksy Global provides reliable bookkeeping, accounting, payroll, tax preparation,
               compliance, and financial reporting support to businesses and accounting practices
-              across the United States, Australia, and the United Kingdom.
+              {localizeCountryText(
+                "across the United States, Australia, and the United Kingdom.",
+                country,
+              )}
             </p>
             <p>
               We act as an extension of your finance team—helping you manage day-to-day accounting
@@ -217,7 +238,7 @@ export default function AboutPage() {
                     strokeWidth={2}
                     aria-hidden="true"
                   />
-                  {commitment}
+                  {localizeCountryText(commitment, country)}
                 </li>
               ))}
             </ul>
@@ -243,14 +264,16 @@ export default function AboutPage() {
                 className="rounded-2xl border border-slate-200 bg-[#f8fafc] p-6 shadow-[0_8px_28px_-20px_rgba(15,29,51,0.28)] sm:p-8"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-5">
-                  <h3 className="text-xl leading-snug font-semibold text-ink sm:text-2xl">{name}</h3>
+                  <h3 className="text-xl leading-snug font-semibold text-ink sm:text-2xl">
+                    {name}
+                  </h3>
                   <span className="rounded-full bg-brand-soft px-4 py-1.5 text-sm font-semibold text-brand">
                     {role}
                   </span>
                 </div>
                 <div className="mt-5 space-y-6 text-[16.6px] leading-7 text-slate-600 sm:text-base">
                   {paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
+                    <p key={paragraph}>{localizeCountryText(paragraph, country)}</p>
                   ))}
                 </div>
               </article>

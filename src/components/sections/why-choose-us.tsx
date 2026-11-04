@@ -1,4 +1,7 @@
+"use client"
+
 import { Award, Gauge, Headset, Layers, LineChart, ShieldCheck } from "lucide-react"
+import { countryDetails, useCountry } from "@/lib/country"
 
 const reasons = [
   {
@@ -34,6 +37,7 @@ const reasons = [
 ]
 
 export function WhyChooseUs() {
+  const region = countryDetails[useCountry()]
   return (
     <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10">
       <div className="mx-auto max-w-[1360px]">
@@ -42,7 +46,7 @@ export function WhyChooseUs() {
             Institutional standards
           </p>
           <h2 className="mt-3 text-balance text-3xl leading-tight font-semibold tracking-tight text-slate-950 sm:text-4xl">
-            Why Australian Businesses Choose Booksy Global
+            Why {region.adjective} Businesses Choose Booksy Global
           </h2>
         </div>
 

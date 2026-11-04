@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { bookingUrl, contact } from "@/data/site"
+import { countryOptions, useCountry } from "@/lib/country"
 
 const engagementTypes = [
   "Ongoing Support",
@@ -67,7 +68,10 @@ function ContactInfoCard({
 }
 
 export default function ContactPage() {
-  const [submissionStatus, setSubmissionStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
+  const country = useCountry()
+  const [submissionStatus, setSubmissionStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle")
   const [submissionMessage, setSubmissionMessage] = useState("")
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -75,7 +79,12 @@ export default function ContactPage() {
     const form = event.currentTarget
     setSubmissionStatus("sending")
     setSubmissionMessage("")
-    const payload = Object.fromEntries(new FormData(form).entries())
+    const selectedCountry =
+      countryOptions.find((option) => option.code === country)?.name ?? "Australia"
+    const payload = {
+      ...Object.fromEntries(new FormData(form).entries()),
+      country: selectedCountry,
+    }
 
     try {
       const response = await fetch("/api/contact", {
@@ -87,10 +96,16 @@ export default function ContactPage() {
       if (!response.ok) throw new Error(result.error || "Please try again shortly.")
       form.reset()
       setSubmissionStatus("success")
-      setSubmissionMessage("Thank you. Your enquiry has been sent. Our team will contact you shortly.")
+      setSubmissionMessage(
+        "Thank you. Your enquiry has been sent. Our team will contact you shortly.",
+      )
     } catch (error) {
       setSubmissionStatus("error")
-      setSubmissionMessage(error instanceof Error ? error.message : "We could not send your enquiry. Please try again.")
+      setSubmissionMessage(
+        error instanceof Error
+          ? error.message
+          : "We could not send your enquiry. Please try again.",
+      )
     }
   }
 
@@ -111,9 +126,7 @@ export default function ContactPage() {
           aria-hidden="true"
         />
         <div className="relative mx-auto flex min-h-[360px] max-w-[1360px] flex-col items-start justify-center px-4 py-16 sm:min-h-[420px] sm:px-6 lg:px-4">
-          <p className="text-sm font-semibold tracking-wide text-blue-200">
-            Get in Touch
-          </p>
+          <p className="text-sm font-semibold tracking-wide text-blue-200">Get in Touch</p>
           <h1 className="mt-5 font-serif text-[2.65rem] leading-[1.1] tracking-tight text-white sm:text-[3.35rem] lg:text-[4rem]">
             Contact Us
           </h1>
@@ -222,11 +235,15 @@ export default function ContactPage() {
                   className="h-12 gap-2.5 rounded-md bg-navy px-7 text-sm font-semibold"
                   disabled={submissionStatus === "sending"}
                 >
-                  {submissionStatus === "sending" ? "Sending..." : "Send Enquiry"} <Send className="size-4" />
+                  {submissionStatus === "sending" ? "Sending..." : "Send Enquiry"}{" "}
+                  <Send className="size-4" />
                 </Button>
                 {submissionMessage && (
                   <p
-                    className={"mt-4 flex items-start gap-2 text-sm leading-relaxed " + (submissionStatus === "error" ? "text-red-600" : "text-brand")}
+                    className={
+                      "mt-4 flex items-start gap-2 text-sm leading-relaxed " +
+                      (submissionStatus === "error" ? "text-red-600" : "text-brand")
+                    }
                     role="status"
                     aria-live="polite"
                   >

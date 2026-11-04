@@ -1,13 +1,21 @@
+"use client"
+
 import Link from "next/link"
 import { ArrowLeft, Check } from "lucide-react"
 
 import { ResourceHero } from "@/components/resource-hero"
 import { CtaBanner } from "@/components/sections/cta-banner"
-import type { ArticleBlock, ResourceArticleData } from "@/data/articles"
+import type { ArticleBlock } from "@/data/articles"
+import { countryContent } from "@/data/country-content"
+import { useCountry } from "@/lib/country"
 
 function ArticleBlockView({ block }: { block: ArticleBlock }) {
   if (typeof block === "string") {
-    return <p className="mt-5 whitespace-pre-line text-[16.6px] leading-7 text-slate-600 sm:text-[17px]">{block}</p>
+    return (
+      <p className="mt-5 whitespace-pre-line text-[16.6px] leading-7 text-slate-600 sm:text-[17px]">
+        {block}
+      </p>
+    )
   }
 
   if (block.type === "comparison") {
@@ -17,7 +25,9 @@ function ArticleBlockView({ block }: { block: ArticleBlock }) {
           <thead className="bg-navy text-white">
             <tr>
               {block.headers.map((header) => (
-                <th key={header} className="px-5 py-4 font-semibold">{header}</th>
+                <th key={header} className="px-5 py-4 font-semibold">
+                  {header}
+                </th>
               ))}
             </tr>
           </thead>
@@ -25,7 +35,13 @@ function ArticleBlockView({ block }: { block: ArticleBlock }) {
             {block.rows.map((row) => (
               <tr key={row[0]} className="border-t border-slate-200 even:bg-[#f6f8fb]">
                 {row.map((cell, index) => (
-                  <td key={row[0] + index} className={"px-5 py-4 leading-relaxed " + (index === 0 ? "font-semibold text-ink" : "text-slate-600")}>
+                  <td
+                    key={row[0] + index}
+                    className={
+                      "px-5 py-4 leading-relaxed " +
+                      (index === 0 ? "font-semibold text-ink" : "text-slate-600")
+                    }
+                  >
                     {cell}
                   </td>
                 ))}
@@ -44,7 +60,9 @@ function ArticleBlockView({ block }: { block: ArticleBlock }) {
     <List className="mt-8 space-y-7">
       {block.items.map((item, index) => {
         const [heading, ...contentLines] = item.split(/\r?\n/)
-        const bulletItems = contentLines.filter((line) => line.startsWith("• ")).map((line) => line.slice(2))
+        const bulletItems = contentLines
+          .filter((line) => line.startsWith("• "))
+          .map((line) => line.slice(2))
         const paragraphs = contentLines.filter((line) => !line.startsWith("• ") && line.length > 0)
         return (
           <li key={heading} className="flex gap-4">
@@ -58,7 +76,9 @@ function ArticleBlockView({ block }: { block: ArticleBlock }) {
                 <p className="text-[16.6px] leading-7 text-slate-600">{heading}</p>
               )}
               {paragraphs.map((paragraph) => (
-                <p key={paragraph} className="mt-2 text-[16.6px] leading-7 text-slate-600">{paragraph}</p>
+                <p key={paragraph} className="mt-2 text-[16.6px] leading-7 text-slate-600">
+                  {paragraph}
+                </p>
               ))}
               {bulletItems.length > 0 && (
                 <ul className="mt-4 space-y-3">
@@ -78,7 +98,10 @@ function ArticleBlockView({ block }: { block: ArticleBlock }) {
   )
 }
 
-export function ResourceArticle({ article }: { article: ResourceArticleData }) {
+export function ResourceArticle({ slug }: { slug: string }) {
+  const article = countryContent[useCountry()].articles.find((item) => item.slug === slug)
+  if (!article) return null
+
   return (
     <>
       <ResourceHero
@@ -89,11 +112,16 @@ export function ResourceArticle({ article }: { article: ResourceArticleData }) {
         imageAlt={article.imageAlt}
       />
       <article className="mx-auto max-w-[1080px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
-        <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-semibold text-brand hover:underline">
+        <Link
+          href="/resources"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-brand hover:underline"
+        >
           <ArrowLeft className="size-4" /> All Resources
         </Link>
         <div className="mx-auto mt-9 max-w-[820px] space-y-6 text-[16.6px] leading-7 text-slate-600 sm:text-[17px]">
-          {article.introduction.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          {article.introduction.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </div>
         <div className="mx-auto mt-14 max-w-[820px] space-y-14">
           {article.sections.map((section) => (
@@ -102,9 +130,16 @@ export function ResourceArticle({ article }: { article: ResourceArticleData }) {
                 {section.heading}
               </h2>
               {section.paragraphs?.map((paragraph) => (
-                <p key={paragraph} className="mt-5 text-[16.6px] leading-7 text-slate-600 sm:text-[17px]">{paragraph}</p>
+                <p
+                  key={paragraph}
+                  className="mt-5 text-[16.6px] leading-7 text-slate-600 sm:text-[17px]"
+                >
+                  {paragraph}
+                </p>
               ))}
-              {section.blocks?.map((block, index) => <ArticleBlockView key={section.heading + index} block={block} />)}
+              {section.blocks?.map((block, index) => (
+                <ArticleBlockView key={section.heading + index} block={block} />
+              ))}
             </section>
           ))}
         </div>

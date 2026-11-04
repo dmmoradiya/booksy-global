@@ -1,18 +1,18 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { services } from "@/data/site"
+import { servicesByCountry } from "@/data/services"
 import ServiceDetailPage from "@/site-pages/service-detail"
 
 type Props = { params: Promise<{ slug: string }> }
 
 export function generateStaticParams() {
-  return services.map(({ slug }) => ({ slug }))
+  return servicesByCountry.AU.map(({ slug }) => ({ slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const service = services.find((item) => item.slug === slug)
+  const service = servicesByCountry.AU.find((item) => item.slug === slug)
 
   if (!service) return { title: "Service Not Found | Booksy Global" }
 
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { slug } = await params
-  if (!services.some((service) => service.slug === slug)) notFound()
+  if (!servicesByCountry.AU.some((service) => service.slug === slug)) notFound()
 
   return <ServiceDetailPage slug={slug} />
 }

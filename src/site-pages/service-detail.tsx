@@ -1,10 +1,14 @@
+"use client"
+
 import Link from "next/link"
 import { ArrowLeft, ArrowRight, Check } from "lucide-react"
 
-import { services } from "@/data/site"
+import { countryContent } from "@/data/country-content"
+import { useCountry } from "@/lib/country"
 import NotFoundPage from "@/site-pages/not-found"
 
 export default function ServiceDetailPage({ slug }: { slug: string }) {
+  const services = countryContent[useCountry()].services
   const service = services.find((item) => item.slug === slug)
 
   if (!service) return <NotFoundPage />
