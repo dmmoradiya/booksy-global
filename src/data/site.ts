@@ -15,11 +15,11 @@ import {
 export const bookingUrl = "https://calendar.app.google/wTYfcaGt1YWVKd3P7"
 
 export const contact = {
-  phone: "+91 62803 47210",
-  phoneHref: "tel:+916280347210",
-  email: "info@booksyglobal.com",
-  address: ["123, Health Street, Sector 45", "Your City, State 500001"],
-  mapQuery: "123, Health Street, Sector 45, Your City, State 500001",
+  phone: "+91 96874 87068",
+  phoneHref: "tel:+919687487068",
+  email: "info.booksyglobal@gmail.com",
+  address: ["306, Laxmi Enclave-2, Katargam,", "Surat, Gujarat – 395004, India"],
+  mapQuery: "306, Laxmi Enclave-2, Katargam, Surat, Gujarat – 395004, India",
   hours: ["Mon – Fri: 9:00 AM – 6:00 PM", "Sat: 10:00 AM – 2:00 PM"],
 }
 

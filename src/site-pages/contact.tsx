@@ -67,18 +67,38 @@ function ContactInfoCard({
 }
 
 export default function ContactPage() {
-  const [sent, setSent] = useState(false)
+  const [submissionStatus, setSubmissionStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
+  const [submissionMessage, setSubmissionMessage] = useState("")
 
-  function onSubmit(event: FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    setSent(true)
+    const form = event.currentTarget
+    setSubmissionStatus("sending")
+    setSubmissionMessage("")
+    const payload = Object.fromEntries(new FormData(form).entries())
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+      const result = (await response.json()) as { error?: string }
+      if (!response.ok) throw new Error(result.error || "Please try again shortly.")
+      form.reset()
+      setSubmissionStatus("success")
+      setSubmissionMessage("Thank you. Your enquiry has been sent. Our team will contact you shortly.")
+    } catch (error) {
+      setSubmissionStatus("error")
+      setSubmissionMessage(error instanceof Error ? error.message : "We could not send your enquiry. Please try again.")
+    }
   }
 
   return (
     <>
-      <section className="relative isolate min-h-[260px] overflow-hidden bg-navy text-white sm:min-h-[320px]">
+      <section className="relative isolate min-h-[360px] overflow-hidden bg-navy text-white sm:min-h-[420px]">
         <Image
-          src="/contact-hero.avif"
+          src="/contact-hero.webp"
           alt="Colleagues meeting to discuss business and accounting needs"
           fill
           priority
@@ -90,11 +110,11 @@ export default function ContactPage() {
           className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0b192c]/95 via-[#0b192c]/75 to-[#0b192c]/45"
           aria-hidden="true"
         />
-        <div className="relative mx-auto flex min-h-[260px] max-w-[1360px] flex-col items-start justify-center px-4 py-16 sm:min-h-[320px] sm:px-6 lg:px-4">
-          <p className="text-xs font-bold tracking-[0.14em] text-blue-100 uppercase">
+        <div className="relative mx-auto flex min-h-[360px] max-w-[1360px] flex-col items-start justify-center px-4 py-16 sm:min-h-[420px] sm:px-6 lg:px-4">
+          <p className="text-sm font-semibold tracking-wide text-blue-200">
             Get in Touch
           </p>
-          <h1 className="mt-3 text-balance text-4xl leading-tight font-semibold tracking-tight text-white sm:text-5xl">
+          <h1 className="mt-5 font-serif text-[2.65rem] leading-[1.1] tracking-tight text-white sm:text-[3.35rem] lg:text-[4rem]">
             Contact Us
           </h1>
         </div>
@@ -123,13 +143,22 @@ export default function ContactPage() {
                   {contact.email}
                 </ContactInfoCard>
               </a>
-              <ContactInfoCard icon={MapPin} title="Address">
-                {contact.address.map((line) => (
-                  <span key={line} className="block">
-                    {line}
-                  </span>
-                ))}
-              </ContactInfoCard>
+              {contact.address.length > 0 && (
+                <a
+                  href={`https://maps.google.com/?q=${encodeURIComponent(contact.mapQuery)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-xl transition-colors hover:bg-brand-soft/30"
+                >
+                  <ContactInfoCard icon={MapPin} title="Address">
+                    {contact.address.map((line) => (
+                      <span key={line} className="block">
+                        {line}
+                      </span>
+                    ))}
+                  </ContactInfoCard>
+                </a>
+              )}
             </div>
           </div>
 
@@ -137,7 +166,12 @@ export default function ContactPage() {
             <form
               id="contact-form"
               onSubmit={onSubmit}
-              onChange={() => setSent(false)}
+              onChange={() => {
+                if (submissionStatus === "success" || submissionStatus === "error") {
+                  setSubmissionStatus("idle")
+                  setSubmissionMessage("")
+                }
+              }}
               className="grid gap-x-5 gap-y-5 sm:grid-cols-2"
             >
               <ContactField id="full-name" label="Full Name" required />
@@ -186,20 +220,20 @@ export default function ContactPage() {
                 <Button
                   type="submit"
                   className="h-12 gap-2.5 rounded-md bg-navy px-7 text-sm font-semibold"
+                  disabled={submissionStatus === "sending"}
                 >
-                  Send Enquiry <Send className="size-4" />
+                  {submissionStatus === "sending" ? "Sending..." : "Send Enquiry"} <Send className="size-4" />
                 </Button>
-                {sent && (
+                {submissionMessage && (
                   <p
-                    className="mt-4 flex items-start gap-2 text-sm leading-relaxed text-brand"
+                    className={"mt-4 flex items-start gap-2 text-sm leading-relaxed " + (submissionStatus === "error" ? "text-red-600" : "text-brand")}
                     role="status"
                     aria-live="polite"
                   >
-                    <CircleCheck className="mt-0.5 size-5 shrink-0" strokeWidth={1.8} />
-                    <span>
-                      Thank you. Your enquiry has been received. Our team will review your
-                      requirements and contact you shortly.
-                    </span>
+                    {submissionStatus === "success" && (
+                      <CircleCheck className="mt-0.5 size-5 shrink-0" strokeWidth={1.8} />
+                    )}
+                    <span>{submissionMessage}</span>
                   </p>
                 )}
               </div>

@@ -13,7 +13,7 @@ const platforms = [
 
 export function Platforms() {
   return (
-    <section className="overflow-hidden bg-white py-14 sm:py-16">
+    <section id="software" className="overflow-hidden bg-white py-14 sm:py-16">
       <div className="mx-auto max-w-[1360px] px-4 text-center sm:px-6 lg:px-10">
         <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">
           Technology & workflows

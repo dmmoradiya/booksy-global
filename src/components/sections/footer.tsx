@@ -1,108 +1,66 @@
-"use client"
-
-import { useState, type FormEvent } from "react"
 import Link from "next/link"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { Mail, MapPin, Phone } from "lucide-react"
 
 import { Logo } from "@/components/logo"
-import {
-  FacebookIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  YoutubeIcon,
-} from "@/components/social-icons"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
-import { contact, navItems, services } from "@/data/site"
+import { contact } from "@/data/site"
 
-const quickLinks = navItems.map(({ label, to }) => ({ label, to }))
-const serviceLinks = services.map((s) => ({ label: s.title, to: `/services#${s.slug}` }))
-const socials = [
-  { label: "Facebook", icon: FacebookIcon },
-  { label: "LinkedIn", icon: LinkedinIcon },
-  { label: "Twitter", icon: TwitterIcon },
-  { label: "Instagram", icon: InstagramIcon },
-  { label: "YouTube", icon: YoutubeIcon },
+const navigationLinks = [
+  { label: "Services", to: "/services" },
+  { label: "Industries", to: "/industries" },
+  { label: "Software", to: "/#software" },
+  { label: "About Us", to: "/about" },
+  { label: "Resources", to: "/resources" },
+  { label: "Contact", to: "/contact" },
+  { label: "Data Protection & Security", to: "/#data-protection-security" },
 ]
 
-function FooterColumn({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <h3 className="text-[16.6px] font-semibold text-white">{title}</h3>
-      <div className="mt-5">{children}</div>
-    </div>
-  )
-}
-
 export function Footer() {
-  const [subscribed, setSubscribed] = useState(false)
-
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setSubscribed(true)
-    e.currentTarget.reset()
-  }
-
   return (
-    <footer className="mt-2 bg-navy-deep pt-16 text-white/80">
-      <div className="mx-auto grid max-w-[1360px] gap-10 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-[1.4fr_0.9fr_1fr_1.2fr_1.3fr] lg:px-10">
+    <footer className="mt-2 bg-navy-deep pt-14 text-white/80 sm:pt-16">
+      <div className="mx-auto grid max-w-[1360px] gap-10 px-4 pb-20 sm:grid-cols-2 sm:px-6 lg:grid-cols-[1.35fr_0.8fr_1.2fr] lg:px-10">
         <div>
           <Logo variant="light" />
-          <p className="mt-5 max-w-[260px] text-[14.4px] leading-[1.8]">
-            Trusted accounting and advisory services to help businesses stay compliant, save taxes,
-            and grow with confidence.
+          <p className="mt-5 max-w-[380px] text-[16px] font-medium leading-relaxed text-white">
+            <span className="block">Spotless Numbers + Flawless Compliance</span>
+            <span className="block">= Total Peace of Mind.</span>
           </p>
-          <div className="mt-5 flex gap-3">
-            {socials.map(({ label, icon: Icon }) => (
-              <span
-                key={label}
-                aria-hidden="true"
-                className="flex size-8 items-center justify-center rounded-full border border-white/40 text-white"
-              >
-                <Icon className="size-3.5" />
-              </span>
-            ))}
-          </div>
+          <p className="mt-3 max-w-[380px] text-[14.4px] leading-[1.8]">
+            Bookkeeping &amp; Compliance Services
+          </p>
         </div>
 
-        <FooterColumn title="Quick Links">
-          <ul className="space-y-3 text-[14.4px]">
-            {quickLinks.map((l) => (
-              <li key={l.to}>
-                <Link href={l.to} className="transition-colors hover:text-white">
-                  {l.label}
+        <div>
+          <h2 className="text-[16.6px] font-semibold text-white">Explore</h2>
+          <ul className="mt-5 space-y-3 text-[14.9px]">
+            {navigationLinks.map(({ label, to }) => (
+              <li key={label}>
+                <Link href={to} className="transition-colors hover:text-white">
+                  {label}
                 </Link>
               </li>
             ))}
           </ul>
-        </FooterColumn>
+        </div>
 
-        <FooterColumn title="Our Services">
-          <ul className="space-y-3 text-[14.4px]">
-            {serviceLinks.map((l) => (
-              <li key={l.to}>
-                <Link href={l.to} className="transition-colors hover:text-white">
-                  {l.label}
-                </Link>
+        <div>
+          <h2 className="text-[16.6px] font-semibold text-white">Contact</h2>
+          <ul className="mt-5 space-y-4 text-[14.9px] leading-relaxed">
+            {contact.address.length > 0 && (
+              <li className="flex gap-3">
+                <MapPin className="mt-0.5 size-4 shrink-0 text-white" />
+                <a
+                  href={`https://maps.google.com/?q=${encodeURIComponent(contact.mapQuery)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white"
+                >
+                  {contact.address.map((line) => (
+                    <span key={line} className="block">{line}</span>
+                  ))}
+                </a>
               </li>
-            ))}
-          </ul>
-        </FooterColumn>
-
-        <FooterColumn title="Contact Us">
-          <ul className="space-y-4 text-[14.4px] leading-relaxed">
-            <li className="flex gap-3">
-              <MapPin className="mt-0.5 size-4 shrink-0 text-white" />
-              <span>
-                {contact.address.map((line) => (
-                  <span key={line} className="block">
-                    {line}
-                  </span>
-                ))}
-              </span>
-            </li>
+            )}
             <li>
               <a href={contact.phoneHref} className="flex gap-3 hover:text-white">
                 <Phone className="mt-0.5 size-4 shrink-0 text-white" />
@@ -110,55 +68,20 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a
-                href="mailto:info@booksyglobal.com"
-                className="flex gap-3 break-all hover:text-white"
-              >
+              <a href={`mailto:${contact.email}`} className="flex gap-3 break-all hover:text-white">
                 <Mail className="mt-0.5 size-4 shrink-0 text-white" />
-                info@booksyglobal.com
+                {contact.email}
               </a>
             </li>
           </ul>
-        </FooterColumn>
-
-        <FooterColumn title="Newsletter">
-          <p className="text-[14.4px] leading-[1.8]">
-            Subscribe to get financial tips, updates, and insights.
-          </p>
-          <form onSubmit={onSubmit} className="mt-5 flex">
-            <Input
-              type="email"
-              required
-              placeholder="Enter your email"
-              aria-label="Email address"
-              className="h-11 rounded-r-none border-0 bg-white px-4 text-[14.4px] text-ink placeholder:text-slate-400 dark:bg-white"
-            />
-            <Button
-              type="submit"
-              aria-label="Subscribe"
-              className="h-11 w-12 rounded-l-none bg-brand hover:bg-brand/90"
-            >
-              <Send className="size-4" />
-            </Button>
-          </form>
-          {subscribed && <p className="mt-3 text-[13.2px] text-white">Thanks for subscribing!</p>}
-        </FooterColumn>
+        </div>
       </div>
 
-      <div className="mx-auto mt-14 max-w-[1360px] px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-10">
         <Separator className="bg-white/10" />
-        <div className="flex flex-col items-center justify-between gap-3 py-6 text-[13.2px] sm:flex-row">
-          <p>© 2025 Booksy Global. All Rights Reserved.</p>
-          <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-white">
-              Privacy Policy
-            </Link>
-            <span className="text-white/40">|</span>
-            <Link href="/terms" className="hover:text-white">
-              Terms of Service
-            </Link>
-          </div>
-        </div>
+        <p className="py-6 text-center text-[13.2px]">
+          © 2026 Booksy Global. All Rights Reserved.
+        </p>
       </div>
     </footer>
   )

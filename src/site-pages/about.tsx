@@ -29,32 +29,22 @@ const commitments = [
 
 const leaders = [
   {
-    initials: "MB",
     name: "CA Milan Baldaniya",
-    role: "Australian Division — Lead Partner",
-    experience:
-      "Chartered Accountant with 3+ years of experience, supporting Australian bookkeeping, payroll, compliance, and financial reporting workflows.",
+    role: "Co-Founder",
+    paragraphs: [
+      "CA Milan Baldaniya is a Chartered Accountant and Co-Founder of Booksy Global, with over 3 years of experience in accounting, taxation, and compliance. He helps Australian businesses and accounting firms manage their financial work smoothly and efficiently.",
+      "His expertise includes Individual, Company, and Trust Tax Returns, BAS/IAS, GST compliance, bookkeeping, year-end accounts, and financial reporting. He is proficient in Xero and QuickBooks Online and is Xero Certified across all levels (L1, L2, and L3).",
+      "As Co-Founder, Milan aims to support Australian accounting firms with reliable and quality offshore services, reduce their workload, and build long-term business relationships based on trust, professionalism, and excellence.",
+    ],
   },
   {
-    initials: "HD",
     name: "CA Harsh Dhameliya",
-    role: "US Division — Lead Partner",
-    experience:
-      "Chartered Accountant with 3+ years of experience, supporting bookkeeping, reporting, e-commerce accounting, and tax workpaper requirements for US businesses and practices.",
-  },
-  {
-    initials: "AA",
-    name: "CA Ayush Atara",
-    role: "US Division — Lead Partner",
-    experience:
-      "Chartered Accountant with 4+ years of experience, supporting US accounting workflows, financial reporting, and dedicated accounting team delivery.",
-  },
-  {
-    initials: "BS",
-    name: "CA Bansari Suhagiya",
-    role: "UK Division — Head of UK Department",
-    experience:
-      "Chartered Accountant with 4+ years of experience, supporting UK bookkeeping, VAT, year-end accounts, payroll, and accounting practice outsourcing workflows.",
+    role: "Co-Founder",
+    paragraphs: [
+      "CA Harsh Dhameliya is a Chartered Accountant (ICAI) and Co-Founder of Booksy Global, with over 4 years of experience in accounting and bookkeeping for Australian and US businesses. He helps businesses and accounting firms manage their financial records accurately and efficiently.",
+      "His expertise includes daily bookkeeping, bank and credit card reconciliations, accounts payable and receivable, payroll processing, month-end closing, and financial reporting. He is proficient in QuickBooks Online, Xero, NetSuite, and Bill.com. He is also an INTUIT ProAdvisor and Xero Certified Professional, with a strong understanding of accounting software and financial processes.",
+      "As Co-Founder, Harsh focuses on providing reliable and quality outsourcing services, simplifying accounting processes, and building long-term client relationships based on trust, accuracy, and professionalism.",
+    ],
   },
 ]
 
@@ -75,9 +65,9 @@ export default function AboutPage() {
           className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0b192c]/85 via-[#0b192c]/65 to-[#0b192c]/35"
           aria-hidden="true"
         />
-        <div className="relative mx-auto flex min-h-[320px] max-w-[1360px] flex-col justify-center px-4 py-16 sm:min-h-[380px] sm:px-6 lg:px-4">
-          <p className="text-xs font-bold tracking-[0.14em] text-blue-100 uppercase">About Us</p>
-          <h1 className="mt-3 text-4xl leading-tight font-semibold tracking-tight text-white sm:text-5xl">
+        <div className="relative mx-auto flex min-h-[360px] max-w-[1360px] flex-col justify-center px-4 py-16 sm:min-h-[420px] sm:px-6 lg:px-4">
+          <p className="text-sm font-semibold tracking-wide text-blue-200">About Us</p>
+          <h1 className="mt-5 font-serif text-[2.65rem] leading-[1.1] tracking-tight text-white sm:text-[3.35rem] lg:text-[4rem]">
             About Booksy Global
           </h1>
         </div>
@@ -237,25 +227,31 @@ export default function AboutPage() {
 
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
         <div className="mx-auto max-w-[1360px]">
-          <h2 className="text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
-            Leadership & Practice Governance
-          </h2>
-          <p className="mt-5 max-w-3xl text-[16.6px] leading-7 text-slate-600 sm:text-base">
-            Booksy Global is supported by qualified Chartered Accountants who oversee
-            country-specific accounting and outsourcing operations.
-          </p>
-          <div className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10">
-            {leaders.map(({ initials, name, role, experience }) => (
-              <article key={name} className="group flex flex-col">
-                <div className="flex aspect-[4/5] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-soft to-[#dce9fc]">
-                  <span className="text-6xl font-semibold text-brand" aria-hidden="true">
-                    {initials}
+          <header className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
+              Leadership &amp; Practice Governance
+            </h2>
+            <p className="mx-auto mt-5 max-w-3xl text-[16.6px] leading-7 text-slate-600 sm:text-base">
+              Booksy Global is supported by qualified Chartered Accountants who oversee
+              country-specific accounting and outsourcing operations.
+            </p>
+          </header>
+          <div className="mx-auto mt-12 grid max-w-6xl gap-6 lg:grid-cols-2">
+            {leaders.map(({ name, role, paragraphs }) => (
+              <article
+                key={name}
+                className="rounded-2xl border border-slate-200 bg-[#f8fafc] p-6 shadow-[0_8px_28px_-20px_rgba(15,29,51,0.28)] sm:p-8"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-5">
+                  <h3 className="text-xl leading-snug font-semibold text-ink sm:text-2xl">{name}</h3>
+                  <span className="rounded-full bg-brand-soft px-4 py-1.5 text-sm font-semibold text-brand">
+                    {role}
                   </span>
                 </div>
-                <div className="mt-5">
-                  <h3 className="text-lg leading-snug font-semibold text-ink">{name}</h3>
-                  <p className="mt-1.5 text-sm font-semibold text-brand">{role}</p>
-                  <p className="mt-4 text-sm leading-[1.7] text-slate-600">{experience}</p>
+                <div className="mt-5 space-y-6 text-[16.6px] leading-7 text-slate-600 sm:text-base">
+                  {paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
                 </div>
               </article>
             ))}

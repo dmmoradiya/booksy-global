@@ -13,7 +13,7 @@ const securityPractices = [
 
 export function DataSecurity() {
   return (
-    <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
+    <section id="data-protection-security" className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
       <div className="mx-auto flex max-w-[1360px] flex-col items-center gap-10">
         <div className="mx-auto w-full text-center">
           <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">

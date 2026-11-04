@@ -26,10 +26,10 @@ export default function IndustriesPage() {
         />
         <div className="relative z-10 mx-auto w-full max-w-[1360px] px-6 py-24 sm:px-10 md:py-28 lg:px-4">
           <div className="max-w-[850px]">
-            <p className="text-xs font-bold tracking-[0.16em] text-blue-200 uppercase">
-              Sectors & practices
+            <p className="text-sm font-semibold tracking-wide text-blue-200">
+              Sectors & Practices
             </p>
-            <h1 className="mt-5 text-balance font-serif text-[2.65rem] leading-[1.08] tracking-tight text-white sm:text-[3.5rem] lg:text-[4.15rem]">
+            <h1 className="mt-5 font-serif text-[2.65rem] leading-[1.1] tracking-tight text-white sm:text-[3.35rem] lg:text-[4rem]">
               Accounting Support Built for Australian Businesses
             </h1>
             <p className="mt-7 max-w-[720px] text-base leading-[1.75] text-slate-200 sm:text-lg">

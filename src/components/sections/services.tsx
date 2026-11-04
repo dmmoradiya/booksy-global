@@ -91,7 +91,7 @@ export function Services() {
   }
 
   return (
-    <section className="overflow-hidden bg-[#f6f8fa] py-20 sm:py-24">
+    <section id="services" className="overflow-hidden bg-[#f6f8fa] py-20 sm:py-24">
       <div className="relative mx-auto max-w-[1360px] px-4 text-center sm:px-6 lg:px-10">
         <div className="mx-auto max-w-3xl">
           <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">

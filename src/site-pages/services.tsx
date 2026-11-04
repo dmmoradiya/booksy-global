@@ -23,10 +23,10 @@ export default function ServicesPage() {
         />
         <div className="relative z-10 mx-auto w-full max-w-[1360px] px-6 py-24 sm:px-10 md:py-28 lg:px-4">
           <div className="max-w-[850px]">
-            <p className="text-xs font-bold tracking-[0.16em] text-brand-200 uppercase">
-              Service catalogue & capabilities
+            <p className="text-sm font-semibold tracking-wide text-blue-200">
+              Service Catalogue & Capabilities
             </p>
-            <h1 className="mt-5 font-serif text-[2.65rem] leading-[1.08] tracking-tight text-white sm:text-[3.5rem] lg:text-[4.15rem]">
+            <h1 className="mt-5 font-serif text-[2.65rem] leading-[1.1] tracking-tight text-white sm:text-[3.35rem] lg:text-[4rem]">
               Australian Bookkeeping,
               <br className="hidden sm:block" /> Payroll & Compliance Support
             </h1>
