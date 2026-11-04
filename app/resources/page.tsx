@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import PageContent from "@/site-pages/resources"
 export const metadata: Metadata = {
-  title: "Small Business Accounting Blog & Insights",
+  title: "Resources | Booksy Global",
   description:
-    "Read practical accounting articles and small business finance insights from the Booksy Global team.",
+    "Practical articles and insights from the Booksy Global team of accountants and advisors.",
   keywords: [
     "small business accounting blog",
     "accounting articles",
