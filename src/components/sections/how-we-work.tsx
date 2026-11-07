@@ -25,8 +25,8 @@ const steps = [
   {
     icon: BarChart3,
     color: "#00a98c",
-    title: "Ongoing Delivery & Review",
-    text: "Our team provides structured accounting support, clear communication, and timely delivery based on your agreed workflow.",
+    title: "Accurate Delivery & Review",
+    text: "Our team provides structured accounting support, clear communication and timely delivery based on agreed workflow, with every output reviewed for accuracy.",
   },
 ]
 
@@ -56,7 +56,7 @@ export function HowWeWork() {
         <div className="text-center">
           <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">How We Work</p>
           <h2 className="mt-3 text-balance text-3xl leading-tight font-semibold tracking-tight text-slate-950 sm:text-4xl">
-            Simple, Secure Onboarding
+            Simple & Secure Onboarding
           </h2>
         </div>
         <div

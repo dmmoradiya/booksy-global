@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 
 const clocks = [
+  { label: "India", timeZone: "Asia/Kolkata" },
   { label: "USA", timeZone: "America/New_York" },
   { label: "UK", timeZone: "Europe/London" },
   { label: "Australia", timeZone: "Australia/Sydney" },
@@ -68,7 +69,7 @@ export function FooterWorldClocks() {
   }, [])
 
   return (
-    <div className="mx-auto grid max-w-[520px] grid-cols-3 justify-items-center gap-3 px-4 py-7 sm:gap-10">
+    <div className="mx-auto grid max-w-[640px] grid-cols-2 justify-items-center gap-5 px-4 py-7 sm:grid-cols-4 sm:gap-8">
       {clocks.map(({ label, timeZone }) => (
         <div key={timeZone} className="flex flex-col items-center gap-2.5 text-center">
           <AnalogClock timeZone={timeZone} now={now} />

@@ -11,7 +11,7 @@ const reasons = [
   {
     icon: ShieldCheck,
     title: "Quality control",
-    text: "We have a rigorous quality control process to ensure that our services meet the highest standards of quality and accuracy. We review and verify all financial data, reports, and tax returns to ensure that they are error-free and comply with all standard operating procedures and regulations.",
+    text: "Our rigorous quality control process ensures every report and tax return is reviewed and verified. We check all financial data for accuracy and compliance with standard procedures and regulations.",
   },
   {
     icon: Layers,
@@ -31,7 +31,7 @@ const reasons = [
   {
     icon: LockKeyhole,
     title: "Data Security & Confidentiality",
-    text: "Your data is always safe with us. We work directly within your approved cloud systems using secure multi-factor authentication (MFA) and strict access controls. With binding team NDAs, rigorous review checks, your firm’s information stays fully protected, confidential and compliant.",
+    text: "Your data is always safe with us. We work in your approved cloud systems and on our own secure cloud infrastructure, protected by MFA, encryption and strict access controls. Also binding team NDAs and rigorous review checks.",
   },
 ]
 
