@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { ChevronDown, Menu, X } from "lucide-react"
@@ -11,6 +12,8 @@ import { bookingUrl, navItems, type NavItem } from "@/data/site"
 import { countryContent } from "@/data/country-content"
 import { cn } from "@/lib/utils"
 import { countryOptions, setCountry, useCountryState, type CountryCode } from "@/lib/country"
+
+const countryFlagSources: Record<CountryCode, string> = { AU: "/flags/au.svg", US: "/flags/us.svg", UK: "/flags/gb.svg" }
 
 function CountrySelector({
   country,
@@ -69,9 +72,7 @@ function CountrySelector({
         onClick={() => setOpen((value) => !value)}
         className="inline-flex h-9 w-[116px] cursor-pointer items-center justify-between gap-1.5 rounded-md border border-blue-300 bg-blue-50 px-3 text-xs font-medium text-slate-700 transition-colors hover:bg-blue-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
       >
-        <span aria-hidden="true" className="flex shrink-0 items-center text-sm leading-none">
-          {selected.flag}
-        </span>
+        <Image src={countryFlagSources[selected.code]} alt="" aria-hidden="true" width={20} height={14} className="h-[14px] w-5 shrink-0 rounded-[2px] object-cover" />
         <span className="leading-none">{selected.code === "AU" ? "AU" : selected.name}</span>
         <ChevronDown
           className={cn("size-3.5 shrink-0 self-center transition-transform", open && "rotate-180")}
@@ -102,9 +103,7 @@ function CountrySelector({
                 country === option.code ? "bg-blue-50 font-semibold text-brand" : "text-ink",
               )}
             >
-              <span aria-hidden="true" className="text-base leading-none">
-                {option.flag}
-              </span>
+              <Image src={countryFlagSources[option.code]} alt="" aria-hidden="true" width={20} height={14} className="h-[14px] w-5 shrink-0 rounded-[2px] object-cover" />
               <span>{option.code === "AU" ? "AU" : option.name}</span>
             </button>
           ))}
