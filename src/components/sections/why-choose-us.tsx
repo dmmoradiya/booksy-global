@@ -1,43 +1,41 @@
 "use client"
 
-import { Award, Gauge, Headset, Layers, LineChart, ShieldCheck } from "lucide-react"
-import { countryDetails, useCountry } from "@/lib/country"
+import { Award, Headset, Layers, LockKeyhole, PiggyBank, ShieldCheck } from "lucide-react"
 
 const reasons = [
   {
     icon: Award,
-    title: "Expert & Experience Professionals",
-    text: "Our work follows structured processes and is reviewed by qualified Chartered Accountants to support consistent, reliable delivery.",
+    title: "Expert & Experienced Professionals",
+    text: "Our work follows structured processes and is reviewed by qualified Chartered Accountants, supporting consistent, reliable and review-ready delivery.",
   },
   {
-    icon: Gauge,
-    title: "Flexible Accounting Capacity",
-    text: "Scale your bookkeeping and accounting support based on your workload, reporting cycles, and business requirements.",
+    icon: ShieldCheck,
+    title: "Quality control",
+    text: "We have a rigorous quality control process to ensure that our services meet the highest standards of quality and accuracy. We review and verify all financial data, reports, and tax returns to ensure that they are error-free and comply with all standard operating procedures and regulations.",
   },
   {
     icon: Layers,
     title: "Work Within Your Existing Systems",
-    text: "We work in client-approved accounting and finance platforms, helping you maintain familiar systems and workflows.",
-  },
-  {
-    icon: LineChart,
-    title: "Clear Financial Reporting",
-    text: "Receive organised bookkeeping and reporting support to help you monitor revenue, expenses, cash flow, and financial performance.",
+    text: "We work in your client-approved accounting and finance platforms, so you keep your familiar systems, workflows and templates with no disruption to daily operations.",
   },
   {
     icon: Headset,
     title: "Dedicated Support Team",
-    text: "Our team can work as an extension of your internal finance team, accounting practice, or business operations.",
+    text: "Our team works as an extension of your internal finance team, accounting practice or business operations. It manages day-to-day production so you can focus on advisory, clients and growth.",
   },
   {
-    icon: ShieldCheck,
-    title: "Secure & Confidential Workflows",
-    text: "We use controlled cloud access, multi-factor authentication, confidentiality agreements, and structured review processes.",
+    icon: PiggyBank,
+    title: "Cost Savings",
+    text: "Outsourcing your accounting and tax services to us can save you time and money. You don’t have to worry about hiring, training staff and worry about employee turnover.",
+  },
+  {
+    icon: LockKeyhole,
+    title: "Data Security & Confidentiality",
+    text: "Your data is always safe with us. We work directly within your approved cloud systems using secure multi-factor authentication (MFA) and strict access controls. With binding team NDAs, rigorous review checks, your firm’s information stays fully protected, confidential and compliant.",
   },
 ]
 
 export function WhyChooseUs() {
-  const region = countryDetails[useCountry()]
   return (
     <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10">
       <div className="mx-auto max-w-[1360px]">
@@ -46,7 +44,7 @@ export function WhyChooseUs() {
             Institutional standards
           </p>
           <h2 className="mt-3 text-balance text-3xl leading-tight font-semibold tracking-tight text-slate-950 sm:text-4xl">
-            Why {region.adjective} Businesses Choose Booksy Global
+            Why Choose Booksy Global
           </h2>
         </div>
 

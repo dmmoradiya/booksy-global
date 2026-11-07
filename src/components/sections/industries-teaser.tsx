@@ -25,7 +25,7 @@ export function IndustriesTeaser() {
             href="/industries"
             className="mt-7 inline-flex h-12 items-center gap-2 rounded-md bg-navy px-5 text-sm font-semibold text-white transition hover:bg-navy-deep"
           >
-            Explore industries <ArrowRight className="size-4" />
+            Whom We Serve <ArrowRight className="size-4" />
           </Link>
         </div>
 

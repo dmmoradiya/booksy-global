@@ -20,7 +20,7 @@ Open http://localhost:3000.
 - /industries — Industries served
 - /resources — Accounting blog and articles
 - /contact — Contact and consultation form
-- /privacy and /terms — Legal pages
+- /terms — Legal page
 
 Each route defines page metadata for search results. Shared site content is in `src/data/site.ts`; shared sections and components are in `src/components`; original page content components are in `src/site-pages`.
 

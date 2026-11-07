@@ -1,24 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { Check } from "lucide-react"
-import { countryDetails, useCountry } from "@/lib/country"
-
-function localizeCountryText(text: string, country: "AU" | "US" | "UK") {
-  if (country === "AU") return text
-  const region = countryDetails[country]
-  return text
-    .replace(
-      "Country-specific support for the United States, Australia, and the United Kingdom",
-      "Country-specific support for " + region.phrase,
-    )
-    .replace(
-      "across the United States, Australia, and the United Kingdom",
-      "across " + region.phrase,
-    )
-    .replace("Australian and US businesses", country === "US" ? "US businesses" : "UK businesses")
-    .replace(/Australian/g, region.adjective)
-}
+import { Award, Check, Eye, ShieldCheck, Target } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
 
 const services = [
   "Daily bookkeeping and transaction categorisation",
@@ -44,29 +28,57 @@ const commitments = [
   "Country-specific support for the United States, Australia, and the United Kingdom",
 ]
 
-const leaders = [
+const principles = [
   {
-    name: "CA Milan Baldaniya",
-    role: "Co-Founder",
-    paragraphs: [
-      "CA Milan Baldaniya is a Chartered Accountant and Co-Founder of Booksy Global, with over 3 years of experience in accounting, taxation, and compliance. He helps Australian businesses and accounting firms manage their financial work smoothly and efficiently.",
-      "His expertise includes Individual, Company, and Trust Tax Returns, BAS/IAS, GST compliance, bookkeeping, year-end accounts, and financial reporting. He is proficient in Xero and QuickBooks Online and is Xero Certified across all levels (L1, L2, and L3).",
-      "As Co-Founder, Milan aims to support Australian accounting firms with reliable and quality offshore services, reduce their workload, and build long-term business relationships based on trust, professionalism, and excellence.",
-    ],
+    icon: Target,
+    title: "Our Mission",
+    text: "To deliver reliable, accurate and tailored accounting and financial services that help our clients manage their financial responsibilities with confidence. We are committed to providing professional support, maintaining high standards of quality and building lasting relationships based on trust, transparency and consistency.",
   },
   {
-    name: "CA Harsh Dhameliya",
-    role: "Co-Founder",
-    paragraphs: [
-      "CA Harsh Dhameliya is a Chartered Accountant (ICAI) and Co-Founder of Booksy Global, with over 4 years of experience in accounting and bookkeeping for Australian and US businesses. He helps businesses and accounting firms manage their financial records accurately and efficiently.",
-      "His expertise includes daily bookkeeping, bank and credit card reconciliations, accounts payable and receivable, payroll processing, month-end closing, and financial reporting. He is proficient in QuickBooks Online, Xero, NetSuite, and Bill.com. He is also an INTUIT ProAdvisor and Xero Certified Professional, with a strong understanding of accounting software and financial processes.",
-      "As Co-Founder, Harsh focuses on providing reliable and quality outsourcing services, simplifying accounting processes, and building long-term client relationships based on trust, accuracy, and professionalism.",
-    ],
+    icon: Eye,
+    title: "Our Vision",
+    text: "To be a trusted and respected financial services partner, recognised for our professional expertise, consistent quality and commitment to client success. We aim to continuously strengthen our capabilities and deliver practical financial solutions that support the long-term growth of the businesses we serve.",
+  },
+]
+
+const coreValues = [
+  {
+    icon: Award,
+    title: "Accuracy & Quality",
+    text: "We take care over every entry, reconciliation and report. Structured processes and Chartered Accountant review help keep our work consistent and reliable.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Integrity & Transparency",
+    text: "We communicate honestly, set clear expectations and say what we can and cannot do. Trust is built through openness, not overstatement.",
+  },
+  {
+    icon: Check,
+    title: "Professional Excellence",
+    text: "Our team’s commitment to learning, professional standards and continuous improvement keeps our support dependable as client needs evolve",
   },
 ]
 
 export default function AboutPage() {
-  const country = useCountry()
+  const principlesRef = useRef<HTMLDivElement>(null)
+  const [principlesVisible, setPrinciplesVisible] = useState(false)
+
+  useEffect(() => {
+    const section = principlesRef.current
+    if (!section) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setPrinciplesVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.12 },
+    )
+    observer.observe(section)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <>
       <section className="relative isolate overflow-hidden bg-navy text-white">
@@ -84,78 +96,94 @@ export default function AboutPage() {
           aria-hidden="true"
         />
         <div className="relative mx-auto flex min-h-[360px] max-w-[1360px] flex-col justify-center px-4 py-16 sm:min-h-[420px] sm:px-6 lg:px-4">
-          <p className="text-sm font-semibold tracking-wide text-blue-200">About Us</p>
-          <h1 className="mt-5 font-serif text-[2.65rem] leading-[1.1] tracking-tight text-white sm:text-[3.35rem] lg:text-[4rem]">
-            About Booksy Global
+          <p className="text-base font-semibold tracking-wide text-blue-200">About Booksy Global</p>
+          <h1 className="mt-5 max-w-[900px] font-serif text-[2.65rem] leading-[1.1] tracking-tight text-white sm:text-[3.35rem] lg:text-[4rem]">
+            Smart Accounting Support for Businesses and Practices That Want to Scale
           </h1>
         </div>
       </section>
 
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-[1360px] gap-10 lg:grid-cols-[0.85fr_1fr] lg:gap-20">
-          <div>
-            <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">
-              About Booksy Global
-            </p>
-            <h2 className="mt-3 text-balance text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
-              Smart Accounting Support for Businesses and Practices That Want to Scale
-            </h2>
+        <div className="mx-auto grid max-w-[1360px] items-center gap-10 lg:grid-cols-[0.85fr_1fr] lg:gap-20">
+          <div className="relative h-72 overflow-hidden rounded-2xl sm:h-96 lg:h-[420px]">
+            <Image
+              src="/about-workspace.avif"
+              alt="Bright office workspace with desks and natural light"
+              fill
+              unoptimized
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-cover"
+            />
           </div>
           <div className="space-y-5 text-[16.6px] leading-7 text-slate-600 sm:text-base">
             <p>
               Booksy Global provides reliable bookkeeping, accounting, payroll, tax preparation,
-              compliance, and financial reporting support to businesses and accounting practices
-              {localizeCountryText(
-                "across the United States, Australia, and the United Kingdom.",
-                country,
-              )}
+              compliance and financial reporting support to businesses and accounting practices
+              across the United States, Australia and the United Kingdom.
             </p>
             <p>
-              We act as an extension of your finance team—helping you manage day-to-day accounting
-              workloads, maintain organised records, prepare clear financial reports, and build
+              We act as an extension of your finance team - helping you manage day-to-day accounting
+              workloads, maintain organised records, prepare clear financial reports and build
               capacity without the cost and complexity of expanding an in-house team.
             </p>
             <p>
               Our approach combines experienced accounting professionals, structured workflows,
-              secure cloud collaboration, and Chartered Accountant-led review processes. Whether you
+              secure cloud collaboration and Chartered Accountant-led review processes. Whether you
               need ongoing bookkeeping, support during busy periods, e-commerce reconciliation,
-              payroll assistance, tax workpapers, or dedicated accounting staff, we tailor our
+              payroll assistance, tax workpapers or dedicated accounting staff, we tailor our
               support around your business requirements.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f6f8fa]">
-        <div className="mx-auto grid max-w-[1360px] items-stretch gap-0 px-4 sm:px-6 lg:grid-cols-2 lg:px-10">
-          <div className="relative h-72 overflow-hidden rounded-2xl sm:h-96 lg:my-16 lg:h-auto">
-            <Image
-              src="/about-workspace.avif"
-              alt="Bright office workspace with desks and natural light"
-              fill
-              unoptimized
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
+      <section className="bg-[#f6f8fa] px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
+        <div ref={principlesRef} className="mx-auto max-w-[1360px]">
+          <div className="grid gap-6 lg:grid-cols-2">
+            {principles.map(({ icon: Icon, title, text }, index) => (
+              <article
+                id={title === "Our Mission" ? "our-mission" : "our-vision"}
+                key={title}
+                className={
+                  "scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_12px_36px_-24px_rgba(9,24,47,0.3)] transition-[opacity,transform] duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none sm:p-9 " +
+                  (principlesVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0")
+                }
+                style={{ transitionDelay: principlesVisible ? index * 100 + "ms" : "0ms" }}
+              >
+                <span className="flex size-12 items-center justify-center rounded-xl bg-brand-soft text-brand">
+                  <Icon className="size-6" strokeWidth={1.8} aria-hidden="true" />
+                </span>
+                <h2 className="mt-5 text-2xl leading-tight font-semibold tracking-tight text-ink sm:text-3xl">
+                  {title}
+                </h2>
+                <p className="mt-4 text-[16.6px] leading-7 text-slate-600 sm:text-base">{text}</p>
+              </article>
+            ))}
           </div>
-          <div className="flex flex-col justify-center py-12 sm:py-16 lg:py-20 lg:pl-16">
-            <p className="text-xs font-bold tracking-[0.14em] text-brand uppercase">Our Purpose</p>
-            <h2 className="mt-3 text-balance text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
-              To Make Accounting Support More Accessible, Flexible, and Reliable
-            </h2>
-            <div className="mt-6 space-y-5 text-[16.6px] leading-7 text-slate-600 sm:text-base">
-              <p>
-                Managing bookkeeping, payroll, reporting, and compliance work can take valuable time
-                away from running and growing a business. Booksy Global helps reduce that pressure
-                by providing dependable offshore accounting support that works within your existing
-                processes and software.
-              </p>
-              <p>
-                Our goal is simple: to help businesses and accounting practices gain clearer
-                financial visibility, stronger operational capacity, and more time to focus on
-                high-value work.
-              </p>
-            </div>
+
+          <h2 id="core-values"
+            className="mt-14 scroll-mt-24 text-center text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
+            Core Values
+          </h2>
+          <div className="mt-7 grid gap-5 md:grid-cols-3">
+            {coreValues.map(({ icon: Icon, title, text }, index) => (
+              <article
+                key={title}
+                className={
+                  "rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_12px_36px_-24px_rgba(9,24,47,0.3)] transition-[opacity,transform] duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none sm:p-7 " +
+                  (principlesVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0")
+                }
+                style={{ transitionDelay: principlesVisible ? (index + 2) * 100 + "ms" : "0ms" }}
+              >
+                <span className="flex size-11 items-center justify-center rounded-xl bg-brand-soft text-brand">
+                  <Icon className="size-5" strokeWidth={1.8} aria-hidden="true" />
+                </span>
+                <h3 className="mt-4 text-xl leading-snug font-semibold tracking-tight text-ink">
+                  {title}
+                </h3>
+                <p className="mt-3 text-[15.4px] leading-7 text-slate-600 sm:text-base">{text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -188,7 +216,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-brand-soft/60 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
+      <section className="bg-brand-soft px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
         <div className="mx-auto grid max-w-[1360px] gap-10 lg:grid-cols-[1fr_2fr] lg:gap-20">
           <h2 className="text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
             Our Approach
@@ -214,70 +242,34 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-navy-deep px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-10 lg:py-24">
+      <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
         <div className="mx-auto grid max-w-[1360px] gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
           <div>
-            <h2 className="text-3xl leading-tight font-semibold tracking-tight text-white sm:text-4xl">
+            <h2 className="text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
               Our Commitment
             </h2>
-            <p className="mt-6 text-xl leading-[1.45] font-semibold text-white sm:text-2xl">
+            <p className="mt-6 text-xl leading-[1.45] font-semibold text-ink sm:text-2xl">
               At Booksy Global, we are committed to helping clients gain clearer financial
               information, improve operational capacity, and focus more time on business growth.
             </p>
           </div>
           <div>
-            <p className="mb-3 text-sm font-medium text-blue-100">We aim to provide:</p>
+            <p className="mb-3 text-sm font-medium text-slate-600">We aim to provide:</p>
             <ul>
               {commitments.map((commitment) => (
                 <li
                   key={commitment}
-                  className="flex items-start gap-3 border-b border-white/15 py-3 text-sm leading-6 text-white/90 sm:text-[16.6px]"
+                  className="flex items-start gap-3 border-b border-slate-200 py-3 text-sm leading-6 text-slate-700 sm:text-[16.6px]"
                 >
                   <Check
-                    className="mt-1 size-4 shrink-0 text-sky-300"
+                    className="mt-1 size-4 shrink-0 text-brand"
                     strokeWidth={2}
                     aria-hidden="true"
                   />
-                  {localizeCountryText(commitment, country)}
+                  {commitment}
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
-        <div className="mx-auto max-w-[1360px]">
-          <header className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
-              Leadership &amp; Practice Governance
-            </h2>
-            <p className="mx-auto mt-5 max-w-3xl text-[16.6px] leading-7 text-slate-600 sm:text-base">
-              Booksy Global is supported by qualified Chartered Accountants who oversee
-              country-specific accounting and outsourcing operations.
-            </p>
-          </header>
-          <div className="mx-auto mt-12 grid max-w-6xl gap-6 lg:grid-cols-2">
-            {leaders.map(({ name, role, paragraphs }) => (
-              <article
-                key={name}
-                className="rounded-2xl border border-slate-200 bg-[#f8fafc] p-6 shadow-[0_8px_28px_-20px_rgba(15,29,51,0.28)] sm:p-8"
-              >
-                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-5">
-                  <h3 className="text-xl leading-snug font-semibold text-ink sm:text-2xl">
-                    {name}
-                  </h3>
-                  <span className="rounded-full bg-brand-soft px-4 py-1.5 text-sm font-semibold text-brand">
-                    {role}
-                  </span>
-                </div>
-                <div className="mt-5 space-y-6 text-[16.6px] leading-7 text-slate-600 sm:text-base">
-                  {paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{localizeCountryText(paragraph, country)}</p>
-                  ))}
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>

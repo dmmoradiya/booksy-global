@@ -16,7 +16,7 @@ const australiaIndustries: Industry[] = [
   {
     icon: Building2,
     title: "Accounting Firms & Bookkeeping Practices",
-    text: "Workflow-ready bookkeeping and accounting capacity for established practices.",
+    text: "Extend your practice’s capacity without adding local overheads. We work as an offshore extension of your team, following your workflows, templates and review standards.",
     points: [
       "Outsourced bookkeeping support",
       "Accounts preparation support",
@@ -30,7 +30,7 @@ const australiaIndustries: Industry[] = [
   {
     icon: ShoppingBag,
     title: "E-Commerce Businesses",
-    text: "Reconciliation and reporting support for stores, marketplaces, and payment platforms.",
+    text: "Online sales create high transaction volumes across multiple platforms. We help keep your sales, fees and payouts matched so your books stay accurate.",
     points: [
       "Shopify reconciliation",
       "Amazon reconciliation",
@@ -42,7 +42,7 @@ const australiaIndustries: Industry[] = [
   {
     icon: Laptop,
     title: "Startups",
-    text: "Organised financial records and reporting support as your business grows.",
+    text: "Early-stage teams need reliable financial records without hiring a full finance team. We provide structured, scalable support from day one.",
     points: [
       "Day-to-day bookkeeping",
       "Cash-flow reporting",
@@ -55,7 +55,7 @@ const australiaIndustries: Industry[] = [
   {
     icon: ClipboardList,
     title: "Professional Service Businesses",
-    text: "Reliable billing, payroll, and bookkeeping support for service-led teams.",
+    text: "Consultants, agencies and other service providers need accurate billing and tidy records so they can focus on clients. We take care of the routine finance work.",
     points: [
       "Client invoice support",
       "Expense tracking",
@@ -68,7 +68,7 @@ const australiaIndustries: Industry[] = [
   {
     icon: Hotel,
     title: "Hotel & Motel Businesses",
-    text: "Day-to-day accounting support across sales, suppliers, payroll, and reporting.",
+    text: "Hospitality generates daily sales across several payment channels. We help keep daily takings, payments and supplier bills accurately recorded.",
     points: [
       "Daily sales reconciliation",
       "Payment gateway reconciliation",
@@ -82,7 +82,7 @@ const australiaIndustries: Industry[] = [
   {
     icon: Users,
     title: "Sole Traders & Small Businesses",
-    text: "Practical bookkeeping and reporting support for independent operators and small teams.",
+    text: "Running a business leaves little time for bookkeeping. We keep your records accurate and up to date so you always know where you stand.",
     points: [
       "Bookkeeping support",
       "GST record support",
@@ -93,8 +93,8 @@ const australiaIndustries: Industry[] = [
   },
   {
     icon: Calculator,
-    title: "SMSF Administrators and Trustees",
-    text: "Organised bookkeeping and administration support for self-managed super funds.",
+    title: "SMSF Administrators & Trustees",
+    text: "Self-managed super funds need well-organised records throughout the year. We support administrators and trustees with accurate bookkeeping and supporting schedules.",
     points: [
       "SMSF bookkeeping support",
       "Investment and bank reconciliation",

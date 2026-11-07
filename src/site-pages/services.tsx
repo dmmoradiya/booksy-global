@@ -5,12 +5,11 @@ import Link from "next/link"
 import { ArrowDown, ArrowRight, Check } from "lucide-react"
 
 import { countryContent } from "@/data/country-content"
-import { countryDetails, useCountry } from "@/lib/country"
+import { useCountry } from "@/lib/country"
 
 export default function ServicesPage() {
   const country = useCountry()
   const services = countryContent[country].services
-  const region = countryDetails[country]
   return (
     <>
       <section className="relative isolate flex min-h-[520px] items-center overflow-hidden bg-[#0b172b] text-white sm:min-h-[580px] lg:min-h-[calc(100svh-5rem)]">
@@ -29,12 +28,12 @@ export default function ServicesPage() {
         />
         <div className="relative z-10 mx-auto w-full max-w-[1360px] px-6 py-24 sm:px-10 md:py-28 lg:px-4">
           <div className="max-w-[850px]">
-            <p className="text-sm font-semibold tracking-wide text-blue-200">
+            <p className="text-base font-semibold tracking-wide text-blue-200">
               Service Catalogue & Capabilities
             </p>
             <h1 className="mt-5 font-serif text-[2.65rem] leading-[1.1] tracking-tight text-white sm:text-[3.35rem] lg:text-[4rem]">
-              {region.adjective} Bookkeeping,
-              <br className="hidden sm:block" /> Payroll & Compliance Support
+              Bookkeeping, Payroll & Taxation
+              <br className="hidden sm:block" /> Compliance Support
             </h1>
             <p className="mt-7 max-w-[720px] text-base leading-[1.75] text-slate-200 sm:text-lg">
               Whether you require day-to-day bookkeeping, payroll support, BAS preparation

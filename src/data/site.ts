@@ -1,4 +1,4 @@
-export const bookingUrl = "https://calendar.app.google/wTYfcaGt1YWVKd3P7"
+export const bookingUrl = "https://calendar.app.google/JBFqQkPaEd9FbpieA"
 
 export const contact = {
   phone: "+91 96874 87068",
@@ -18,8 +18,9 @@ export type NavItem = {
 export const navItems: NavItem[] = [
   { label: "Home", to: "/" },
   { label: "Services", to: "/services" },
-  { label: "Industries", to: "/industries" },
+  { label: "Whom We Serve", to: "/industries" },
   { label: "Resources", to: "/resources" },
   { label: "About Us", to: "/about" },
+  { label: "Our Team", to: "/team" },
   { label: "Contact Us", to: "/contact" },
 ]

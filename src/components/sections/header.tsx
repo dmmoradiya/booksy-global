@@ -15,11 +15,9 @@ import { countryOptions, setCountry, useCountryState, type CountryCode } from "@
 function CountrySelector({
   country,
   onSelect,
-  mobile = false,
 }: {
   country: CountryCode
   onSelect: (country: CountryCode) => void
-  mobile?: boolean
 }) {
   const [open, setOpen] = useState(false)
   const rootRef = useRef<HTMLDivElement>(null)
@@ -74,7 +72,7 @@ function CountrySelector({
         <span aria-hidden="true" className="flex shrink-0 items-center text-sm leading-none">
           {selected.flag}
         </span>
-        <span className="leading-none">{selected.name}</span>
+        <span className="leading-none">{selected.code === "AU" ? "AU" : selected.name}</span>
         <ChevronDown
           className={cn("size-3.5 shrink-0 self-center transition-transform", open && "rotate-180")}
         />
@@ -85,7 +83,7 @@ function CountrySelector({
           aria-label="Choose country or region"
           className={cn(
             "z-[60] min-w-[150px] rounded-lg border border-slate-200 bg-white p-2 shadow-[0_12px_30px_-10px_rgba(15,29,51,0.3)]",
-            mobile ? "static mt-2 w-[116px]" : "absolute right-0 top-full mt-2",
+            "absolute right-0 top-full mt-2",
           )}
         >
           {countryOptions.map((option) => (
@@ -107,7 +105,7 @@ function CountrySelector({
               <span aria-hidden="true" className="text-base leading-none">
                 {option.flag}
               </span>
-              <span>{option.name}</span>
+              <span>{option.code === "AU" ? "AU" : option.name}</span>
             </button>
           ))}
         </div>
@@ -232,16 +230,21 @@ function HeaderContent({ pathname }: { pathname: string }) {
           </Link>
         </div>
 
-        <button
-          type="button"
-          ref={menuToggleRef}
-          className="inline-flex size-10 items-center justify-center rounded-md text-ink lg:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-        >
-          {open ? <X className="size-6" /> : <Menu className="size-6" />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <div className={countryResolved ? "" : "invisible"}>
+            <CountrySelector country={country} onSelect={setCountry} />
+          </div>
+          <button
+            type="button"
+            ref={menuToggleRef}
+            className="inline-flex size-10 items-center justify-center rounded-md text-ink"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+          >
+            {open ? <X className="size-6" /> : <Menu className="size-6" />}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -296,9 +299,6 @@ function HeaderContent({ pathname }: { pathname: string }) {
               )
             })}
           </nav>
-          <div className={cn("mt-4", !countryResolved && "invisible")}>
-            <CountrySelector mobile country={country} onSelect={setCountry} />
-          </div>
           <Link
             href={bookingUrl}
             target="_blank"

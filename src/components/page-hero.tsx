@@ -35,7 +35,7 @@ export function PageHero({ eyebrow, title, description, crumbs }: PageHeroProps)
             </span>
           ))}
         </nav>
-        <Eyebrow>{eyebrow}</Eyebrow>
+        <Eyebrow className="text-sm">{eyebrow}</Eyebrow>
         <h1 className="mt-4 max-w-[720px] text-[37.8px] leading-[1.15] font-bold tracking-tight text-ink sm:text-[48.3px]">
           {title}
         </h1>

@@ -12,15 +12,6 @@ import { Textarea } from "@/components/ui/textarea"
 import { bookingUrl, contact } from "@/data/site"
 import { countryOptions, useCountry } from "@/lib/country"
 
-const engagementTypes = [
-  "Ongoing Support",
-  "Dedicated Team Member",
-  "One-Time Cleanup",
-  "Busy-Season Support",
-  "Project-Based Support",
-  "Not Sure Yet",
-]
-
 const inputClass = "h-12 rounded-md border-slate-200 bg-white px-4 text-sm text-ink"
 
 function ContactField({
@@ -28,11 +19,13 @@ function ContactField({
   label,
   type = "text",
   required = false,
+  autoComplete,
 }: {
   id: string
   label: string
   type?: string
   required?: boolean
+  autoComplete?: string
 }) {
   return (
     <div className="grid gap-2">
@@ -40,7 +33,14 @@ function ContactField({
         {label}
         {required && <span className="ml-1 text-brand">*</span>}
       </Label>
-      <Input id={id} name={id} type={type} required={required} className={inputClass} />
+      <Input
+        id={id}
+        name={id}
+        type={type}
+        required={required}
+        autoComplete={autoComplete}
+        className={inputClass}
+      />
     </div>
   )
 }
@@ -126,23 +126,20 @@ export default function ContactPage() {
           aria-hidden="true"
         />
         <div className="relative mx-auto flex min-h-[360px] max-w-[1360px] flex-col items-start justify-center px-4 py-16 sm:min-h-[420px] sm:px-6 lg:px-4">
-          <p className="text-sm font-semibold tracking-wide text-blue-200">Get in Touch</p>
+          <p className="text-base font-semibold tracking-wide text-blue-200">Get in Touch</p>
           <h1 className="mt-5 font-serif text-[2.65rem] leading-[1.1] tracking-tight text-white sm:text-[3.35rem] lg:text-[4rem]">
-            Contact Us
+            Discuss Your Needs
           </h1>
+          <p className="mt-5 max-w-[800px] text-base leading-relaxed text-white/90 sm:text-lg">
+            Send a message and we&apos;ll route it, or go directly to whichever of us fits your situation - each name below links to a full profile.
+          </p>
         </div>
       </section>
 
       <section className="bg-white px-4 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-[1360px] gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.45fr)] lg:gap-12">
           <div>
-            <p className="text-[16.6px] leading-7 text-slate-600 sm:text-base">
-              Tell us about your bookkeeping, payroll, BAS, IAS, GST, reporting, compliance, or
-              accounting outsourcing requirements. Our team will review your information and contact
-              you to discuss the most suitable support model.
-            </p>
-
-            <div className="mt-7 grid gap-3">
+            <div className="grid gap-3">
               <a href={contact.phoneHref} className="block">
                 <ContactInfoCard icon={Phone} title="Phone">
                   {contact.phone}
@@ -187,45 +184,20 @@ export default function ContactPage() {
               }}
               className="grid gap-x-5 gap-y-5 sm:grid-cols-2"
             >
-              <ContactField id="full-name" label="Full Name" required />
-              <ContactField id="business-name" label="Business / Accounting Practice Name" />
-              <ContactField id="email" label="Email Address" type="email" required />
-              <ContactField id="business-type" label="Business Type" />
-              <ContactField id="entity-type" label="Entity Type" />
-              <ContactField id="accounting-software" label="Accounting Software Used" />
-              <ContactField id="services-required" label="Services Required" />
-              <ContactField id="preferred-contact-time" label="Preferred Contact Time" />
-
-              <div className="grid gap-2">
-                <Label htmlFor="engagement-type" className="text-sm font-medium text-ink">
-                  Preferred Engagement Type
-                </Label>
-                <select
-                  id="engagement-type"
-                  name="engagement-type"
-                  defaultValue=""
-                  className="h-12 w-full rounded-md border border-slate-200 bg-white px-4 text-sm text-ink outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
-                >
-                  <option value="" disabled>
-                    Select an engagement type
-                  </option>
-                  {engagementTypes.map((type) => (
-                    <option key={type} value={type}>
-                      {type}
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <ContactField id="name" label="Name" autoComplete="name" required />
+              <ContactField id="company" label="Company" autoComplete="organization" />
+              <ContactField id="email" label="Email" type="email" autoComplete="email" required />
+              <ContactField id="phone" label="Phone" type="tel" autoComplete="tel" />
 
               <div className="grid gap-2 sm:col-span-2">
-                <Label htmlFor="additional-message" className="text-sm font-medium text-ink">
-                  Additional Message
+                <Label htmlFor="message" className="text-sm font-medium text-ink">
+                  What do you need help with?
                 </Label>
                 <Textarea
-                  id="additional-message"
-                  name="additional-message"
-                  rows={5}
-                  className="min-h-32 rounded-md border-slate-200 bg-white px-4 py-3 text-sm text-ink"
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className="min-h-24 rounded-md border-slate-200 bg-white px-4 py-3 text-sm text-ink"
                 />
               </div>
 
@@ -259,7 +231,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-white px-4 pb-12 sm:px-6 lg:px-10">
+      <section className="bg-white px-4 pb-0 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-[1360px]">
           <div className="flex flex-col items-start gap-6 rounded-2xl bg-navy px-6 py-8 text-white sm:px-10 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-center gap-5">

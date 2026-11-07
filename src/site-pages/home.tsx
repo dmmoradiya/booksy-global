@@ -2,7 +2,6 @@
 
 import { BenefitsBar } from "@/components/sections/benefits-bar"
 import { CtaBanner } from "@/components/sections/cta-banner"
-import { DataSecurity } from "@/components/sections/data-security"
 import { Hero } from "@/components/sections/hero"
 import { HowWeWork } from "@/components/sections/how-we-work"
 import { IndustriesTeaser } from "@/components/sections/industries-teaser"
@@ -18,10 +17,9 @@ export default function HomePage() {
       <Services />
       <WhyChooseUs />
       <IndustriesTeaser />
-      <Platforms />
       <HowWeWork />
-      <DataSecurity />
-      <CtaBanner />
+      <Platforms />
+      <CtaBanner grayBackground />
     </div>
   )
 }

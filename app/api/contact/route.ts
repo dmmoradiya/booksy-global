@@ -3,17 +3,12 @@ import { NextResponse } from "next/server"
 export const runtime = "nodejs"
 
 const fields = [
-  ["full-name", "Full Name"],
+  ["name", "Name"],
   ["country", "Country / Region"],
-  ["business-name", "Business / Accounting Practice Name"],
-  ["email", "Email Address"],
-  ["business-type", "Business Type"],
-  ["entity-type", "Entity Type"],
-  ["accounting-software", "Accounting Software Used"],
-  ["services-required", "Services Required"],
-  ["preferred-contact-time", "Preferred Contact Time"],
-  ["engagement-type", "Preferred Engagement Type"],
-  ["additional-message", "Additional Message"],
+  ["company", "Company"],
+  ["email", "Email"],
+  ["phone", "Phone"],
+  ["message", "What do you need help with?"],
 ] as const
 
 function escapeHtml(value: string) {
@@ -58,7 +53,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Select a valid country or region." }, { status: 400 })
   }
 
-  if (!values["full-name"] || !values.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
+  if (!values.name || !values.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
     return NextResponse.json(
       { error: "Enter your name and a valid email address." },
       { status: 400 },
@@ -94,7 +89,7 @@ export async function POST(request: Request) {
   const form = new FormData()
   form.set("from", from)
   form.set("to", to)
-  form.set("subject", "Website enquiry: " + values["full-name"])
+  form.set("subject", "Website enquiry: " + values.name)
   form.set("text", text)
   form.set("html", html)
   form.set("h:Reply-To", values.email)

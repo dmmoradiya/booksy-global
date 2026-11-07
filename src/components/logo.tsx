@@ -3,7 +3,8 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import booksyLogo from "@/assets/booksy-global-logo.jpg"
+import booksyLogo from "@/assets/booksy-global-logo.png"
+import booksyFooterLogo from "@/assets/booksy-global-logo-footer.png"
 import { cn } from "@/lib/utils"
 
 type LogoProps = {
@@ -37,15 +38,12 @@ export function Logo({ variant = "dark", className }: LogoProps) {
     <Link
       href="/"
       aria-label="Booksy Global home"
-      className={cn("relative block h-[68px] w-[220px] overflow-hidden rounded-sm bg-white", className)}
+      className={cn(
+        "relative block h-[68px] w-[220px] overflow-hidden rounded-sm bg-transparent",
+        className,
+      )}
     >
-      <Image
-        src={booksyLogo}
-        alt="Booksy Global"
-        fill
-        sizes="140px"
-        className="object-contain"
-      />
+      <Image src={booksyFooterLogo} alt="Booksy Global" fill sizes="220px" className="scale-[1.6] object-contain" />
     </Link>
   )
 }

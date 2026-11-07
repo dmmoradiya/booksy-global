@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { Layout } from "@/components/layout"
 export const metadata: Metadata = {
+  metadataBase: new URL("https://booksyglobal.com"),
+  robots: { index: true, follow: true },
   title: {
     default: "Booksy Global | Tax, Bookkeeping & Advisory",
     template: "%s | Booksy Global",
@@ -31,6 +33,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],

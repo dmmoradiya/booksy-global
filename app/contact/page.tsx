@@ -4,7 +4,7 @@ import PageContent from "@/site-pages/contact"
 export const metadata: Metadata = {
   title: "Contact Booksy Global | Bookkeeping & Accounting Support",
   description:
-    "Discuss bookkeeping, payroll, BAS, IAS, GST, reporting, compliance, and accounting outsourcing support with Booksy Global.",
+    "Send a message to Booksy Global and we'll route your enquiry to the right person.",
   keywords: [
     "contact Booksy Global",
     "bookkeeping support enquiry",

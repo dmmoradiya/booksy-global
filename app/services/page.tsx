@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import PageContent from "@/site-pages/services"
 
 export const metadata: Metadata = {
-  title: "Australian Bookkeeping, Payroll & Compliance Support",
+  title: "Bookkeeping, Payroll & Taxation Compliance Support",
   description:
     "Explore bookkeeping, payroll, BAS, IAS, GST, tax workpapers, reporting, e-commerce, catch-up, and SMSF accounting support from Booksy Global.",
   keywords: [

@@ -5,10 +5,8 @@ import Link from "next/link"
 
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { countryDetails, useCountry } from "@/lib/country"
 
 export function Hero() {
-  const region = countryDetails[useCountry()]
   return (
     <section
       id="home"
@@ -29,17 +27,16 @@ export function Hero() {
       />
       <div className="relative z-10 mx-auto w-full max-w-[1360px] px-6 py-24 sm:px-10 md:py-32 lg:px-4">
         <div className="max-w-[720px]">
-          <p className="text-sm font-semibold tracking-wide text-blue-200">
-            {region.adjective} Bookkeeping &amp; Compliance Services
-          </p>
+          <p className="text-base font-semibold tracking-wide text-blue-200">We Aim</p>
           <h1 className="mt-5 font-serif text-[2.65rem] leading-[1.1] tracking-tight text-white sm:text-[3.35rem] lg:text-[4rem]">
-            Spotless Numbers +<br className="hidden md:block" /> Flawless Compliance
-            <br className="hidden md:block" /> = Total Peace of Mind.
+            Spotless Numbers
+            <br className="hidden md:block" /> Flawless Compliance
+            <br className="hidden md:block" /> Total Peace of Mind.
           </h1>
           <p className="mt-7 max-w-[700px] text-base leading-[1.75] text-slate-200 sm:text-lg">
-            Booksy Global provides reliable bookkeeping, payroll, BAS, IAS, GST, tax workpaper, and
-            financial reporting support for {region.adjective} accounting practices and growing
-            businesses.
+            Managing routine bookkeeping, payroll and tax compliance shouldn't distract you from
+            growing your business. Booksy Global delivers dependable accounting outsourcing tailored
+            for modern firms and businesses.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
