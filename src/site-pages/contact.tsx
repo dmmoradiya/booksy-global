@@ -56,7 +56,7 @@ function ContactInfoCard({
 }) {
   return (
     <div className="flex items-start gap-4 py-2">
-      <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-soft text-brand">
+      <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand text-white">
         <Icon className="size-5" strokeWidth={1.8} aria-hidden="true" />
       </span>
       <div className="min-w-0">
