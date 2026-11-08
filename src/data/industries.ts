@@ -1,9 +1,10 @@
 import {
+  BriefcaseBusiness,
   Building2,
   Calculator,
   ClipboardList,
   Hotel,
-  Laptop,
+  Rocket,
   ShoppingBag,
   Users,
   type LucideIcon,
@@ -40,7 +41,7 @@ const australiaIndustries: Industry[] = [
     ],
   },
   {
-    icon: Laptop,
+    icon: Rocket,
     title: "Startups",
     text: "Early-stage teams need reliable financial records without hiring a full finance team. We provide structured, scalable support from day one.",
     points: [

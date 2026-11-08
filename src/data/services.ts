@@ -1,11 +1,13 @@
 import {
+  BookOpenCheck,
   Building2,
   Calculator,
   ChartLine,
   ClipboardList,
   FileChartColumn,
   ShoppingBag,
-  UserRoundSearch,
+  BookSearch,
+  UserRoundGroup,
   Users,
   type LucideIcon,
 } from "lucide-react"
@@ -25,7 +27,7 @@ export type Service = {
 const australiaServices: Service[] = [
   {
     slug: "bookkeeping-accounting-support",
-    icon: Users,
+    icon: BookOpenCheck,
     category: "Bookkeeping & accounting",
     title: "Bookkeeping & Accounting Support",
     summary: "Keep day-to-day records accurate, reconciled, and ready for review.",
@@ -180,7 +182,7 @@ const australiaServices: Service[] = [
   },
   {
     slug: "catch-up-cleanup-bookkeeping",
-    icon: UserRoundSearch,
+    icon: BookSearch,
     category: "Ledger remediation",
     title: "Catch-Up & Cleanup Bookkeeping",
     summary: "Bring overdue or inconsistent records back into a clear, reviewable order.",
@@ -231,7 +233,7 @@ const australiaServices: Service[] = [
   },
   {
     slug: "dedicated-offshore-staff",
-    icon: Users,
+    icon: UserRoundGroup,
     category: "Accounting practice extension",
     title: "Dedicated Offshore Staff for Accounting Practices",
     summary: "Add dedicated accounting capacity aligned to your firm’s workflows.",

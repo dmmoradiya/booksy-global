@@ -29,9 +29,9 @@ export function Hero() {
         <div className="max-w-[720px]">
           <p className="text-base font-semibold tracking-wide text-blue-200">We Aim</p>
           <h1 className="mt-5 font-serif text-[2.65rem] leading-[1.1] tracking-tight text-white sm:text-[3.35rem] lg:text-[4rem]">
-            Spotless Numbers
-            <br className="hidden md:block" /> Flawless Compliance
-            <br className="hidden md:block" /> Total Peace of Mind.
+            <span className="bg-gradient-to-r from-sky-200 via-blue-300 to-indigo-200 bg-clip-text text-transparent">Spotless</span> Numbers
+            <br className="hidden md:block" /> <span className="bg-gradient-to-r from-sky-200 via-blue-300 to-indigo-200 bg-clip-text text-transparent">Flawless</span> Compliance
+            <br className="hidden md:block" /> Total <span className="bg-gradient-to-r from-sky-200 via-blue-300 to-indigo-200 bg-clip-text text-transparent">Peace</span> of Mind.
           </h1>
           <p className="mt-7 max-w-[700px] text-base leading-[1.75] text-slate-200 sm:text-lg">
             Managing routine bookkeeping, payroll and tax compliance shouldn't distract you from

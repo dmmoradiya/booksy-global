@@ -1,6 +1,6 @@
 "use client"
 
-import { Award, Headset, Layers, LockKeyhole, PiggyBank, ShieldCheck } from "lucide-react"
+import { Award, HandCoins, Headset, Layers, LockKeyhole, ShieldCheck } from "lucide-react"
 
 const reasons = [
   {
@@ -24,7 +24,7 @@ const reasons = [
     text: "Our team works as an extension of your internal finance team, accounting practice or business operations. It manages day-to-day production so you can focus on advisory, clients and growth.",
   },
   {
-    icon: PiggyBank,
+    icon: HandCoins,
     title: "Cost Savings",
     text: "Outsourcing your accounting and tax services to us can save you time and money. You don’t have to worry about hiring, training staff and worry about employee turnover.",
   },

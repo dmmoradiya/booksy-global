@@ -30,14 +30,14 @@ const commitments = [
 
 const principles = [
   {
-    icon: Target,
-    title: "Our Mission",
-    text: "To deliver reliable, accurate and tailored accounting and financial services that help our clients manage their financial responsibilities with confidence. We are committed to providing professional support, maintaining high standards of quality and building lasting relationships based on trust, transparency and consistency.",
-  },
-  {
     icon: Eye,
     title: "Our Vision",
-    text: "To be a trusted and respected financial services partner, recognised for our professional expertise, consistent quality and commitment to client success. We aim to continuously strengthen our capabilities and deliver practical financial solutions that support the long-term growth of the businesses we serve.",
+    text: "To be the most trusted outsourcing partner for businesses and firms worldwide.",
+  },
+  {
+    icon: Target,
+    title: "Our Mission",
+    text: "To deliver accurate, secure and timely accounting and tax support, so businesses and firms can grow and scale with confidence.",
   },
 ]
 
@@ -161,8 +161,10 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <h2 id="core-values"
-            className="mt-14 scroll-mt-24 text-center text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl">
+          <h2
+            id="core-values"
+            className="mt-14 scroll-mt-24 text-center text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl"
+          >
             Core Values
           </h2>
           <div className="mt-7 grid gap-5 md:grid-cols-3">
