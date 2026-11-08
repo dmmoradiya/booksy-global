@@ -28,10 +28,10 @@ export function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-[1360px] px-6 py-24 sm:px-10 md:py-32 lg:px-4">
         <div className="max-w-[720px]">
           <p className="text-base font-semibold tracking-wide text-blue-200">We Aim</p>
-          <h1 className="mt-5 font-serif text-[2.65rem] leading-[1.1] tracking-tight text-white sm:text-[3.35rem] lg:text-[4rem]">
-            <span className="bg-gradient-to-r from-sky-200 via-blue-300 to-indigo-200 bg-clip-text text-transparent">Spotless</span> Numbers
-            <br className="hidden md:block" /> <span className="bg-gradient-to-r from-sky-200 via-blue-300 to-indigo-200 bg-clip-text text-transparent">Flawless</span> Compliance
-            <br className="hidden md:block" /> Total <span className="bg-gradient-to-r from-sky-200 via-blue-300 to-indigo-200 bg-clip-text text-transparent">Peace</span> of Mind.
+          <h1 className="mt-5 font-serif text-[clamp(1.85rem,9.2vw,2.6rem)] leading-[1.1] tracking-tight text-white sm:text-[3.35rem] lg:text-[4rem]">
+            <span className="block whitespace-nowrap"><span className="bg-gradient-to-r from-sky-200 via-blue-300 to-indigo-200 bg-clip-text text-transparent">Spotless</span> Numbers</span>
+            <span className="block whitespace-nowrap"><span className="bg-gradient-to-r from-sky-200 via-blue-300 to-indigo-200 bg-clip-text text-transparent">Flawless</span> Compliance</span>
+            <span className="block whitespace-nowrap">Total <span className="bg-gradient-to-r from-sky-200 via-blue-300 to-indigo-200 bg-clip-text text-transparent">Peace</span> of Mind.</span>
           </h1>
           <p className="mt-7 max-w-[700px] text-base leading-[1.75] text-slate-200 sm:text-lg">
             Managing routine bookkeeping, payroll and tax compliance shouldn't distract you from
