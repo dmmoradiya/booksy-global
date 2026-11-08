@@ -32,7 +32,7 @@ function FlippingServiceCard({ service }: { service: Service }) {
           onClick={() => setIsFlipped(true)}
           className="absolute inset-0 flex flex-col rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-[0_12px_36px_-24px_rgba(9,24,47,0.35)] [backface-visibility:hidden] sm:p-7"
         >
-          <span className="flex size-12 items-center justify-center rounded-xl bg-brand-soft text-brand">
+          <span className="flex size-12 items-center justify-center rounded-xl bg-brand text-white">
             <Icon className="size-6" strokeWidth={1.8} />
           </span>
           <span className="mt-8 text-[12.2px] font-bold tracking-[0.12em] text-brand uppercase">

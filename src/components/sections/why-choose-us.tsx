@@ -54,7 +54,7 @@ export function WhyChooseUs() {
               key={title}
               className="min-h-[168px] rounded-xl border border-slate-200 border-l-2 border-l-brand bg-[#f8fafc] p-5 transition-colors hover:border-brand/40 hover:bg-brand-soft/40 sm:min-h-[176px] sm:p-6"
             >
-              <span className="flex size-10 items-center justify-center rounded-lg bg-brand-soft text-brand">
+              <span className="flex size-10 items-center justify-center rounded-lg bg-brand text-white">
                 <Icon className="size-5 shrink-0" strokeWidth={1.9} aria-hidden="true" />
               </span>
               <h3 className="mt-4 text-lg leading-snug font-semibold tracking-tight text-ink">

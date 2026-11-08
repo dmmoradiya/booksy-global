@@ -66,7 +66,7 @@ export default function IndustriesPage() {
                 key={title}
                 className={`group gap-0 rounded-xl bg-white p-7 shadow-[0_6px_24px_-10px_rgba(15,29,51,0.12)] ring-slate-100 transition-all hover:-translate-y-1 hover:bg-navy hover:shadow-[0_18px_40px_-14px_rgba(15,29,51,0.35)] lg:col-span-2 lg:min-h-[500px] lg:p-8 ${index === 4 ? "lg:col-start-2" : ""}`}
               >
-                <span className="flex size-14 items-center justify-center rounded-full bg-brand-soft text-navy transition-colors group-hover:bg-white/10 group-hover:text-white">
+                <span className="flex size-14 items-center justify-center rounded-full bg-brand text-white transition-colors group-hover:bg-white/10 group-hover:text-white">
                   <Icon className="size-7" strokeWidth={1.5} />
                 </span>
                 <h3 className="mt-5 text-[17.6px] font-semibold text-ink transition-colors group-hover:text-white">
